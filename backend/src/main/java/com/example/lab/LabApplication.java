@@ -17,7 +17,7 @@ public class LabApplication {
 	@Bean
 	ApplicationRunner init(UserRepository userRepository, UsertypeRepository usertypeRepository, GenderRepository genderRepository,
 						   ProvinceRepository provinceRepository,TitleRepository titleRepository, TypeRepository typeRepository,
-						   CustomerRepository customerRepository
+						   CustomerRepository customerRepository,DentistDataRepository dentistDataRepository, HospitalRepository hospitalRepository
 						  ) {
 		return args -> {
 			Stream.of("กรุงเทพมหานคร","กระบี่","กาญจนบุรี","กาฬสินธุ์","กำแพงเพชร","ขอนแก่น","จันทบุรี","ฉะเชิงเทรา","ชลบุรี","ชัยนาท"
@@ -93,6 +93,14 @@ public class LabApplication {
 				t.setName(nametype);
 				typeRepository.save(typecus);
 
+			//B5803569
+				Hospital hos = new Hospital();
+				hos.setName("รัฐบาล");
+				Hospital hos1 = new Hospital();
+				hos1.setName("เอกชน");
+
+				hospitalRepository.save(hos);
+				hospitalRepository.save(hos1);
 
 			});
 		};
