@@ -1,0 +1,65 @@
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+h1{
+  font-size: 22px;
+    text-align: center;
+    color:white;
+}
+
+img.taxi {
+    position: taxi;
+    top: 0;
+    width: 300px;
+}
+table{
+  text-align: left;
+  border: 1px ;
+
+}
+form{
+  text-align: left;
+  font-size: 13px;
+  color:black;
+}
+ul{
+  text-align: center;
+}
+.card-container.card {
+    max-width: 500px;
+    padding: 20px 35px;
+}
+.card {
+    background-color: #F7F7F7;
+    /* just in case there no content*/
+    padding: 20px 25px 30px;
+    margin: 0 auto 5px;
+    margin-top: 50px;
+
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 2px;
+    border-radius: 10px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+button {
+    background-color: #ff3333;
+    color: white;
+    padding: 10px 10px;
+    margin: 8px 0;
+    cursor: pointer;
+    width: 200px;
+}
+.mat-radio-button {
+  padding-right: 8px;
+}
