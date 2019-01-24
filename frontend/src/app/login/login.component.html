@@ -1,0 +1,24 @@
+<body background = "https://k2prime.com/wp-content/uploads/2015/09/Light-Blue-blur-background1.jpg">
+<div class="container">
+<div style="text-align:center;" class="card card-container">
+  <h1>Welcome to Dental Clinic <br></h1>
+  <img src = "https://data.ac-illust.com/data/thumbnails/7f/7fe7b3ad9e1447462f80eb9f74414a5e_t.jpeg" width="220" height="160" >
+  <h2>Sign in </h2>
+  <form class="form">
+    <mat-form-field class="form-email" appearance="outline">
+      <input matInput placeholder="E-mail" [(ngModel)] = "email" [ngModelOptions]="{standalone: true}">
+    </mat-form-field><br>
+
+    <mat-form-field class="form-password" appearance="outline">
+      <input matInput placeholder="Password" [(ngModel)] = "password" [ngModelOptions]="{standalone: true}" ng-hide ="showpassword" type="password">
+    </mat-form-field>
+  </form>
+    <button mat-flat-button color = "red" (click)="login()" [routerLink]="['/menu']" >SIGN IN</button> <br>
+
+</div>
+</div>
+<br><br>
+</body>
+
+
+
