@@ -17,7 +17,8 @@ public class LabApplication {
 	@Bean
 	ApplicationRunner init(UserRepository userRepository, UsertypeRepository usertypeRepository, GenderRepository genderRepository,
 						   ProvinceRepository provinceRepository,TitleRepository titleRepository, TypeRepository typeRepository,
-						   CustomerRepository customerRepository,DentistDataRepository dentistDataRepository, HospitalRepository hospitalRepository
+						   CustomerRepository customerRepository,DentistDataRepository dentistDataRepository, HospitalRepository hospitalRepository,
+						   ReserveRepository reserveRepository,RoomRepository roomRepository,QueueRepository queueRepository
 						  ) {
 		return args -> {
 			Stream.of("กรุงเทพมหานคร","กระบี่","กาญจนบุรี","กาฬสินธุ์","กำแพงเพชร","ขอนแก่น","จันทบุรี","ฉะเชิงเทรา","ชลบุรี","ชัยนาท"
@@ -92,7 +93,7 @@ public class LabApplication {
 				Type typecus = new Type();
 				t.setName(nametype);
 				typeRepository.save(typecus);
-
+			});
 			//B5803569
 				Hospital hos = new Hospital();
 				hos.setName("รัฐบาล");
@@ -102,7 +103,20 @@ public class LabApplication {
 				hospitalRepository.save(hos);
 				hospitalRepository.save(hos1);
 
-			});
+				//B5814909
+				Stream.of("101", "102", "103", "104").forEach(room -> {
+					Room a = new Room();
+					a.setRoomNumber(room);
+					roomRepository.save(a);
+				});
+					Stream.of("1", "2", "3", "4", "5", "6", "7", "8", "9", "10").forEach(queue -> {
+						Queue q = new Queue();
+						q.setQueueNumber(queue);
+						queueRepository.save(q);
+				});
+
+
+
 		};
 	}
 }
