@@ -16,7 +16,8 @@ public class LabApplication {
 	}
 	@Bean
 	ApplicationRunner init(UserRepository userRepository, UsertypeRepository usertypeRepository, GenderRepository genderRepository,
-						   ProvinceRepository provinceRepository,TitleRepository titleRepository
+						   ProvinceRepository provinceRepository,TitleRepository titleRepository, TypeRepository typeRepository,
+						   CustomerRepository customerRepository
 						  ) {
 		return args -> {
 			Stream.of("กรุงเทพมหานคร","กระบี่","กาญจนบุรี","กาฬสินธุ์","กำแพงเพชร","ขอนแก่น","จันทบุรี","ฉะเชิงเทรา","ชลบุรี","ชัยนาท"
@@ -85,6 +86,15 @@ public class LabApplication {
 
 			userRepository.save(em);
 			userRepository.findAll().forEach(System.out::println);
+
+			//B5815074
+			Stream.of("ถอนฟัน","อุดฟัน","ขูดหินปูน","จัดฟัน").forEach(nametype -> {
+				Type typecus = new Type();
+				t.setName(nametype);
+				typeRepository.save(typecus);
+
+
+			});
 		};
 	}
 }
