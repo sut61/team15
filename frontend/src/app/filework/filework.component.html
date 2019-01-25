@@ -1,0 +1,71 @@
+<body style="background-color : #FFCCCC ">
+
+<div class="container">
+  <div style="text-align:center;" class="card card-container">
+    <form action="/action_page.php">
+      <table align="center" width="430">
+        <h1>
+          <a style="color:black;">กรอกข้อมูลทันตแพทย์</a>
+        </h1>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Number</mat-label>
+          <input matInput placeholder="Number" [(ngModel)]="views.numberInput" name="number" >
+        </mat-form-field>
+
+        <br>
+
+        <mat-form-field appearance="outline">
+          <mat-label>First-name</mat-label>
+          <input matInput placeholder="Firstname" [(ngModel)]="views.firstnameInput" name="firstname" >
+        </mat-form-field>
+
+        &nbsp;
+
+        <mat-form-field appearance="outline">
+          <mat-label>Last-name</mat-label>
+          <input matInput placeholder="Lastname"[(ngModel)]="views.lastnameInput" name="lastname">
+        </mat-form-field>
+
+
+        <br>
+
+        <mat-form-field appearance="outline">
+          <mat-select placeholder="Gender" [(ngModel)]="views.genderNameSelect" name="gender" >
+            <mat-option *ngFor="let gender of gender" [value]="gender.gender">
+              {{gender.gender}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+
+
+
+        <mat-form-field appearance="outline">
+          <mat-select placeholder="type" [(ngModel)]="views.nameTypeSelect" name="nameType" >
+            <mat-option *ngFor="let type of nametype" [value]="type.nameType">
+              {{type.nameType}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        &nbsp;&nbsp;&nbsp;  <button mat-flat-button  color="yellow" routerLink='/menu' routerLinkActive='active'> ก่อนหน้า </button>
+        <br>
+
+        <mat-form-field appearance="outline">
+          <mat-select placeholder="ประเภทโรงพยาบาล" [(ngModel)]="views.hospitalSelect" name="hospital" >
+            <mat-option *ngFor="let hospital of hospital" [value]="hospital.hospital">
+              {{hospital.hospital}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        &nbsp;&nbsp;&nbsp;  <button mat-flat-button color="yellow" (click)="save_func()">ยืนยันการลงทะเบียน</button>
+
+        <br>
+      </table>
+    </form>
+
+  </div>
+</div>
+</body>
+

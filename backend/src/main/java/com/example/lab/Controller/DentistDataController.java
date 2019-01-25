@@ -52,21 +52,21 @@ public class DentistDataController {
 
 
     @PostMapping(path ="/dentistData/{numberInput}/{firstnameInput}/{lastnameInput}/" +
-                       "/{genderNameSelect}/{typeSelect}/{hospitalSelect}")
+                       "/{genderNameSelect}/{nameTypeSelect}/{hospitalSelect}")
 
     public DentistData newDentistData(@RequestBody DentistData dentistData,
                                    @PathVariable String numberInput,
                                    @PathVariable String firstnameInput,
                                    @PathVariable String lastnameInput,
                                    @PathVariable String genderNameSelect,
-                                   @PathVariable String typeSelect,
+                                   @PathVariable String nameTypeSelect,
                                    @PathVariable String hospitalSelect
 
                                 ) {
         DentistData c = new DentistData();
         Gender gender = genderRepository.findBygender(genderNameSelect);
         System.out.print(gender);
-        Type type = typeRepository.findBynameType(typeSelect);
+        Type type = typeRepository.findBynameType(nameTypeSelect);
         System.out.print(type);
         Hospital hospital =hospitalRepository.findByhospital(hospitalSelect);
         System.out.print(hospital);
