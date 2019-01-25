@@ -8,6 +8,9 @@ import { FinishComponent } from './finish/finish.component';
 import { MenuComponent } from './menu/menu.component';
 import { TabComponent } from './tab/tab.component';
 
+import { PaymentComponent } from './payment/payment.component';
+import { ReciptComponent } from './recipt/recipt.component';
+
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 
@@ -19,6 +22,8 @@ const routes: Routes = [
 { path: 'finish', component:FinishComponent },
 { path: 'menu',component: MenuComponent },
 { path: 'tab',component: TabComponent },
+{path : 'Payment', component:PaymentComponent},
+{path : 'Recipt', component:ReciptComponent},
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
