@@ -31,6 +31,8 @@ import {MatTableModule} from '@angular/material/table';
 import { RegistercusComponent } from './registercus/registercus.component';
 import { LastpageComponent } from './lastpage/lastpage.component';
 
+import { FileworkComponent } from './filework/filework.component';
+
 const appRoutes: Routes = [
 { path: 'login', component:LoginComponent },
 { path: 'register',component: RegisterComponent },
@@ -41,6 +43,7 @@ const appRoutes: Routes = [
 {path : 'Recipt', component:ReciptComponent},
 { path: 'registercus',component: RegistercusComponent },
 { path: 'lastpage', component:LastpageComponent },
+{ path: 'filework',component:FileworkComponent },
 ];
 
 @NgModule({
@@ -56,6 +59,8 @@ const appRoutes: Routes = [
     ReciptComponent,
     RegistercusComponent,
     LastpageComponent,
+    FileworkComponent,
+
   ],
   imports: [
     BrowserModule,

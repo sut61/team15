@@ -35,5 +35,8 @@ constructor(
       getAllRecipt(): Observable<any> {
       return this.httpClient.get(this.API + '/Payment');
             }
+      gethospital(): Observable<any> {
+      return this.httpClient.get(this.API + '/Hospital');
+      }
 
 }

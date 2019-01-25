@@ -17,6 +17,8 @@ import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import { LastpageComponent } from './lastpage/lastpage.component';
 import { RegistercusComponent } from './registercus/registercus.component';
 
+import { FileworkComponent } from './filework/filework.component';
+
 const routes: Routes = [
 { path: '', component:LoginComponent },
 { path: 'login', component:LoginComponent },
@@ -28,6 +30,7 @@ const routes: Routes = [
 {path : 'Recipt', component:ReciptComponent},
 { path: 'registercus',component: RegistercusComponent },
 { path: 'lastpage', component:LastpageComponent },
+{ path: 'filework',component: FileworkComponent },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
