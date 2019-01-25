@@ -39,4 +39,23 @@ constructor(
       return this.httpClient.get(this.API + '/Hospital');
       }
 
+      //toom
+      getqueue(): Observable<any> {
+          return this.httpClient.get(this.API + '/Queue');
+          }
+    getroom(): Observable<any> {
+          return this.httpClient.get(this.API + '/Room');
+          }
+
+    getcustomer(): Observable<any> {
+          return this.httpClient.get(this.API + '/Customer');
+          }
+    getReserve(): Observable<any>{
+          return this.httpClient.get(this.API+'/Reserve');
+    }
+
+    getAllReserve(): Observable<any> {
+      return this.httpClient.get(this.API + '/Reserve');
+      }
+
 }
