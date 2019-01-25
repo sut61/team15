@@ -1,0 +1,45 @@
+<body style="background-color:rgb(243, 203, 72)">
+  <br><br>
+
+  <div style="text-align:center;" class="card card-container">
+    <div class="card">
+      <div class="card-header card-header-rose card-header-icon">
+        <h1>ใบนัดการทำฟัน</h1><br>
+      </div>
+      <div class="card-body">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-6">
+              <label color="black">ชื่อ-สกุล : {{app.namecus}}</label><br>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label style="color:black">พบ : {{app.namedent}}</label>
+            </div>
+            <div class="col-md-6">
+              <label style="color:black">เพื่อ : {{app.typename}}</label>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label style="color:black">วันที่ : {{app.date}}</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-5 form-inline">
+              <br>
+              <button mat-raised-button class="button-margin">Print</button>
+              <button mat-raised-button color="warn" [routerLink]="['/menu']">ย้อนกลับ</button>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>

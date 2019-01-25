@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Bean;
 import com.example.lab.Entity.*;
 import com.example.lab.Repository.*;
 
+import java.util.Date;
 import java.util.stream.Stream;
 @SpringBootApplication
 public class LabApplication {
@@ -18,7 +19,8 @@ public class LabApplication {
 	ApplicationRunner init(UserRepository userRepository, UsertypeRepository usertypeRepository, GenderRepository genderRepository,
 						   ProvinceRepository provinceRepository,TitleRepository titleRepository, TypeRepository typeRepository,
 						   CustomerRepository customerRepository,DentistDataRepository dentistDataRepository, HospitalRepository hospitalRepository,
-						   ReserveRepository reserveRepository,RoomRepository roomRepository,QueueRepository queueRepository
+						   ReserveRepository reserveRepository,RoomRepository roomRepository,QueueRepository queueRepository,
+						   AppointmentRepository appointmentRepository
 						  ) {
 		return args -> {
 			Stream.of("กรุงเทพมหานคร","กระบี่","กาญจนบุรี","กาฬสินธุ์","กำแพงเพชร","ขอนแก่น","จันทบุรี","ฉะเชิงเทรา","ชลบุรี","ชัยนาท"
@@ -114,6 +116,14 @@ public class LabApplication {
 						q.setQueueNumber(queue);
 						queueRepository.save(q);
 				});
+
+			//B5800995
+
+			Appointment ap = new Appointment();
+			ap.setDate(new Date());
+			Type typecus = typeRepository.findBynameType("");
+			ap.setType(typecus);
+			appointmentRepository.save(ap);
 
 
 

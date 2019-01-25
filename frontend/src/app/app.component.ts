@@ -22,6 +22,9 @@ import { RegistercusComponent } from './registercus/registercus.component';
 
 import { FileworkComponent } from './filework/filework.component';
 
+import { AppointmentComponent } from './appointment/appointment.component';
+import { PrintComponent } from './print/print.component';
+
 const routes: Routes = [
 { path: '', component:LoginComponent },
 { path: 'login', component:LoginComponent },
@@ -36,6 +39,8 @@ const routes: Routes = [
 { path: 'filework',component: FileworkComponent },
 { path: 'reserveQueue' ,component:ReserveQueueComponent },
 { path: 'queueTable' ,component:QueueTableComponent },
+{path:'appointment', component:AppointmentComponent},
+{path:'print', component:PrintComponent},
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
