@@ -10,6 +10,7 @@ import com.example.lab.Repository.DentistDataRepository;
 import com.example.lab.Repository.PaymentRepository;
 import com.example.lab.Repository.TypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -37,7 +38,13 @@ public class PaymentController {
         this.typeRepository = typeRepository;
         this.paymentRepository = paymentRepository;
     }
-
+    @GetMapping("/Customer")
+    public Collection<Customer> customers() {
+        return customerRepository.findAll().stream().collect(Collectors.toList());
+    }@GetMapping("/Dentisdata")
+    public Collection<DentistData> dentisdata() {
+        return dentisdatarepository.findAll().stream().collect(Collectors.toList());
+    }
     @GetMapping("/Payment")
     public Collection<Payment> payments() {
         return paymentRepository.findAll().stream().collect(Collectors.toList());

@@ -57,5 +57,22 @@ constructor(
     getAllReserve(): Observable<any> {
       return this.httpClient.get(this.API + '/Reserve');
       }
+      
+      //Mild
+      getAppointment(): Observable<any> {
+            return this.httpClient.get(this.API + '/Appointment');
+            }
+            getType(): Observable<any> {
+            return this.httpClient.get(this.API + '/Type');
+            }
+            DentFull(): Observable<any> {
+            return this.httpClient.get(this.API + '/DentFull');
+            }
+            CustomerDent(): Observable<any>{
+            return this.httpClient.get(this.API+'/CustomerDent');
+            }
+            Appointment(cusName:String,DentName:String,type:String,d:Date): Observable<any>{
+            return this.httpClient.get(this.API+"/Appointment/"+d+"/"+cusName+"/"+DentName+"/"+type);
+            }
 
 }

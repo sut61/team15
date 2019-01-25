@@ -32,10 +32,7 @@ public class CustomerController {
     }
 
     //customer
-    @GetMapping(path = "/Customer", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Collection<Customer> getCustomer() {
-        return customerRepository.findAll().stream().collect(Collectors.toList());
-    }
+
     @GetMapping(path = "/Customer/{CustomerId}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Customer getOneCustomer(@PathVariable Long customerId){ return customerRepository.findById(customerId).get();
     }

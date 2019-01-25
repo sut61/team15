@@ -36,6 +36,13 @@ import { LastpageComponent } from './lastpage/lastpage.component';
 
 import { FileworkComponent } from './filework/filework.component';
 
+import { PrintService } from './Model/PrintService';
+import { PrintComponent } from './print/print.component';
+import { AppointmentComponent } from './appointment/appointment.component';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {ReactiveFormsModule} from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
 const appRoutes: Routes = [
 { path: 'login', component:LoginComponent },
 { path: 'register',component: RegisterComponent },
@@ -49,6 +56,8 @@ const appRoutes: Routes = [
 { path: 'filework',component:FileworkComponent },
 { path: 'reserveQueue' ,component:ReserveQueueComponent },
 { path: 'queueTable' ,component:QueueTableComponent },
+{ path: 'appointment' ,component:AppointmentComponent },
+{ path: 'print' ,component:PrintComponent },
 ];
 
 @NgModule({
@@ -67,7 +76,8 @@ const appRoutes: Routes = [
     FileworkComponent,
     ReserveQueueComponent,
     QueueTableComponent,
-
+    AppointmentComponent,
+    PrintComponent,
   ],
   imports: [
     BrowserModule,
@@ -90,9 +100,12 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatTabsModule,
     MatChipsModule,
-    MatTableModule
+    MatTableModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule,
+    HttpModule,
   ],
-  providers: [Controller],
+  providers: [Controller,PrintService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
