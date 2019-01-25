@@ -10,6 +10,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FinishComponent } from './finish/finish.component';
+import { ReserveQueueComponent } from './reserveQueue/reserveQueue.component';
+import { QueueTableComponent } from './queueTable/queueTable.component';
+
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 
@@ -44,6 +47,8 @@ const appRoutes: Routes = [
 { path: 'registercus',component: RegistercusComponent },
 { path: 'lastpage', component:LastpageComponent },
 { path: 'filework',component:FileworkComponent },
+{ path: 'reserveQueue' ,component:ReserveQueueComponent },
+{ path: 'queueTable' ,component:QueueTableComponent },
 ];
 
 @NgModule({
@@ -60,6 +65,8 @@ const appRoutes: Routes = [
     RegistercusComponent,
     LastpageComponent,
     FileworkComponent,
+    ReserveQueueComponent,
+    QueueTableComponent,
 
   ],
   imports: [

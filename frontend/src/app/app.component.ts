@@ -11,6 +11,9 @@ import { TabComponent } from './tab/tab.component';
 import { PaymentComponent } from './payment/payment.component';
 import { ReciptComponent } from './recipt/recipt.component';
 
+import { ReserveQueueComponent } from './reserveQueue/reserveQueue.component';
+import { QueueTableComponent } from './queueTable/queueTable.component';
+
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 
@@ -31,6 +34,8 @@ const routes: Routes = [
 { path: 'registercus',component: RegistercusComponent },
 { path: 'lastpage', component:LastpageComponent },
 { path: 'filework',component: FileworkComponent },
+{ path: 'reserveQueue' ,component:ReserveQueueComponent },
+{ path: 'queueTable' ,component:QueueTableComponent },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,0 +1,52 @@
+<body style="background-color:#87CEFA">
+<br>
+<div class="container">
+  <div style="text-align:center;" class="card card-container">
+  <h1>
+    <a style="color:white;">จองคิวทำฟัน</a>
+  </h1>
+
+<form class="form">
+
+  <mat-form-field>
+    <mat-select placeholder="ชื่อ" [(ngModel)]="views.customerNameSelect" name="customerName" >
+      <mat-option *ngFor="let customer of customer" [value]="customer.firstname">
+        {{customer.firstname}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field>
+    <mat-select placeholder="เลือกห้อง" [(ngModel)]="views.roomNumberSelect" name="roomNumber" >
+      <mat-option *ngFor="let room of room" [value]="room.roomNumber">
+        {{room.roomNumber}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field>
+    <mat-select placeholder="ลำดับคิว" [(ngModel)]="views.queueNumberSelect" name="queueNumber" >
+      <mat-option *ngFor="let queue of queue" [value]="queue.queueNumber">
+        {{queue.queueNumber}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <br>
+
+  <div class="button-1" style="text-align:center;">
+    <button mat-raised-button ="green" (click)="save_func()" >จอง</button>
+    &nbsp;
+    <button mat-raised-button [routerLink]="['/queueTable']">แสดงรายการ</button>
+  </div>
+
+  <br>
+
+</form>
+</div>
+</div>
+</body>

@@ -1,0 +1,48 @@
+<body style="background-color:#87CEFA">
+<div class = "header_content">
+  <br>
+  <h1>
+    <a style="color:rgb(46, 46, 46);">รายการจอง</a>
+  </h1>
+
+<div style="text-align:center:">
+
+
+  <form>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="No">
+        <th mat-header-cell *matHeaderCellDef style="text-align:center;" > No </th>
+        <td mat-cell *matCellDef="let element"> {{element.reserveId}} </td>
+      </ng-container>
+
+    <ng-container matColumnDef="Customer">
+      <th mat-header-cell *matHeaderCellDef style="text-align:center;" > Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.customer.firstname}} </td>
+    </ng-container>
+
+      <ng-container matColumnDef="Room">
+        <th mat-header-cell *matHeaderCellDef style="text-align:center;" > Room Number </th>
+        <td mat-cell *matCellDef="let element"> {{element.room.roomNumber}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Queue">
+        <th mat-header-cell *matHeaderCellDef style="text-align:center;" > Queue Number</th>
+        <td mat-cell *matCellDef="let element"> {{element.queue.queueNumber}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <div class="button-1">
+      <button mat-raised-button [routerLink]="['/menu']" >หน้าแรก</button>
+    </div>
+    <br>
+
+  </form>
+  </div>
+</div>
+</body>
+
+
