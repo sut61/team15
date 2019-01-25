@@ -24,6 +24,7 @@ com\example\lab\Controller\ReserveController.class
 com\example\lab\Repository\RoomRepository.class
 com\example\lab\Entity\Room.class
 com\example\lab\Repository\TitleRepository.class
+com\example\lab\Controller\AppointmentController.class
 com\example\lab\Repository\TypeRepository.class
 com\example\lab\Controller\PaymentController.class
 com\example\lab\Repository\CustomerRepository.class

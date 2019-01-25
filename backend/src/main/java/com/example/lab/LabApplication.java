@@ -91,7 +91,7 @@ public class LabApplication {
 			//B5815074
 			Stream.of("ถอนฟัน","อุดฟัน","ขูดหินปูน","จัดฟัน").forEach(nametype -> {
 				Type typecus = new Type();
-				t.setName(nametype);
+				typecus.setName(nametype);
 				typeRepository.save(typecus);
 			});
 			//B5803569

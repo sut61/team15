@@ -14,6 +14,8 @@ import { ReciptComponent } from './recipt/recipt.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 
+import { LastpageComponent } from './lastpage/lastpage.component';
+import { RegistercusComponent } from './registercus/registercus.component';
 
 const routes: Routes = [
 { path: '', component:LoginComponent },
@@ -24,6 +26,8 @@ const routes: Routes = [
 { path: 'tab',component: TabComponent },
 {path : 'Payment', component:PaymentComponent},
 {path : 'Recipt', component:ReciptComponent},
+{ path: 'registercus',component: RegistercusComponent },
+{ path: 'lastpage', component:LastpageComponent },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

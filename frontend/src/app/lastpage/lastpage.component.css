@@ -1,0 +1,22 @@
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  padding: 100padding;
+  margin: 0;
+}
+h1{
+  font-size: 50px;
+}
+h2{
+  font-size: 30px;
+}
+button {
+    background-color: #FF8C00;
+    color: white;
+    padding: 10px 10px;
+    margin: 8px 0;
+    height: 100%;
+    width: 200px;
+}
+

@@ -28,6 +28,9 @@ import { PaymentComponent } from './payment/payment.component';
 import { ReciptComponent } from './recipt/recipt.component';
 import {MatTableModule} from '@angular/material/table';
 
+import { RegistercusComponent } from './registercus/registercus.component';
+import { LastpageComponent } from './lastpage/lastpage.component';
+
 const appRoutes: Routes = [
 { path: 'login', component:LoginComponent },
 { path: 'register',component: RegisterComponent },
@@ -36,6 +39,8 @@ const appRoutes: Routes = [
 { path: 'tab',component: TabComponent },
 {path : 'Payment', component:PaymentComponent},
 {path : 'Recipt', component:ReciptComponent},
+{ path: 'registercus',component: RegistercusComponent },
+{ path: 'lastpage', component:LastpageComponent },
 ];
 
 @NgModule({
@@ -48,7 +53,9 @@ const appRoutes: Routes = [
     MenuComponent,
     TabComponent,
     PaymentComponent,
-    ReciptComponent
+    ReciptComponent,
+    RegistercusComponent,
+    LastpageComponent,
   ],
   imports: [
     BrowserModule,
