@@ -1,0 +1,54 @@
+<body class="w3-display-middle" style="text-align: center">
+<div class = "header_content">
+  <h1 class = "title">Docter Recipt</h1>
+</div>
+<table mat-table [dataSource]="dataSource"  class="mat-elevation-z8">
+  <!-- No Column -->
+  <ng-container matColumnDef="No">
+    <th mat-header-cell *matHeaderCellDef> No </th>
+    <td mat-cell *matCellDef="let payment"> {{payment.pay_ID}} </td>
+    <td mat-footer-cell *matFooterCellDef> TotalPrice </td>
+  </ng-container>
+
+  <!-- Customer Column -->
+  <ng-container matColumnDef="CustomerName">
+    <th mat-header-cell *matHeaderCellDef> Customername </th>
+    <td mat-cell *matCellDef="let payment"> {{payment.customer.firstname}} </td>
+  </ng-container>
+
+  <!-- Driver Column -->
+  <ng-container matColumnDef="DriverName">
+    <th mat-header-cell *matHeaderCellDef> Doctername </th>
+    <td mat-cell *matCellDef="let payment"> {{payment.denname.firstname}} </td>
+  </ng-container>
+
+  <!-- Datepay Column -->
+  <ng-container matColumnDef="DatePay">
+    <th mat-header-cell *matHeaderCellDef> Datepay </th>
+    <td mat-cell *matCellDef="let payment"> {{payment.datePay}} </td>
+  </ng-container>
+
+  <!-- Payment Column -->
+  <ng-container matColumnDef="PayMent">
+    <th mat-header-cell *matHeaderCellDef> payment </th>
+    <td mat-cell *matCellDef="let payment"> {{payment.payMent}} </td>
+  </ng-container>
+
+  <!-- Place Column -->
+  <ng-container matColumnDef="Type">
+    <th mat-header-cell *matHeaderCellDef> Type </th>
+    <td mat-cell *matCellDef="let payment"> {{payment.nameType.nameType}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+ิ<br>
+<button  mat-raised-button [routerLink]="['/menu']" >เสร็จสิ้น</button>
+<br>
+<br>
+<br>
+
+
+</body>

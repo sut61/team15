@@ -24,12 +24,18 @@ import { TabComponent } from './tab/tab.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatChipsModule} from '@angular/material/chips';
 
+import { PaymentComponent } from './payment/payment.component';
+import { ReciptComponent } from './recipt/recipt.component';
+import {MatTableModule} from '@angular/material/table';
+
 const appRoutes: Routes = [
 { path: 'login', component:LoginComponent },
 { path: 'register',component: RegisterComponent },
 { path: 'finish', component:FinishComponent },
 { path: 'menu',component: MenuComponent },
 { path: 'tab',component: TabComponent },
+{path : 'Payment', component:PaymentComponent},
+{path : 'Recipt', component:ReciptComponent},
 ];
 
 @NgModule({
@@ -41,6 +47,8 @@ const appRoutes: Routes = [
     MenuComponent,
     MenuComponent,
     TabComponent,
+    PaymentComponent,
+    ReciptComponent
   ],
   imports: [
     BrowserModule,
@@ -63,6 +71,7 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatTabsModule,
     MatChipsModule,
+    MatTableModule
   ],
   providers: [Controller],
   bootstrap: [AppComponent]

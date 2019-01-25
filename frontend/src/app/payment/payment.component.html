@@ -1,0 +1,44 @@
+<body class="w3-display-middle" style="text-align: center">
+<div class = "header_content">
+  <h1 class = "title">Dentis Payment</h1>
+</div>
+<div style="text-align:center;" class="card card-container">
+<mat-form-field class="example-full-width">
+  <mat-select placeholder="customer " [(ngModel)]="views.fristNameSelect" name="firstname" >
+    <mat-option *ngFor="let firstname of firstname" [value]="firstname.firstname">
+      {{firstname.firstname}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<br>
+<br>
+<mat-form-field class="example-full-width">
+  <mat-select ng-disabled=true placeholder="Doctor" [(ngModel)]="views.doctorNameSelect" name="firstname" >
+    <mat-option *ngFor="let firstname of doctorname" [value]="firstname.firstname">
+      {{firstname.firstname}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<br>
+<br>
+<mat-form-field class="example-full-width">
+  <mat-select placeholder="Typedentis" [(ngModel)]="views.typeSelect" name="nameType">
+    <mat-option *ngFor="let name of nametype" [value]="name.nameType">
+      {{name.nameType}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<br>
+<br>
+
+<br><br>
+<mat-form-field>
+  <input matInput placeholder="จำงวนเงิน" [(ngModel)]="views.payMentInput" >
+</mat-form-field>
+<br>
+<button  mat-raised-button  (click)="save()" >จ่าย</button><button  mat-raised-button [routerLink]="['/Recipt']"  >ใบเสร็จ</button>
+<br><br><br>
+
+</div>
+
+</body>
