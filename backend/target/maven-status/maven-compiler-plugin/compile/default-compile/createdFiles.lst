@@ -8,6 +8,7 @@ com\example\lab\Entity\Hospital.class
 com\example\lab\Repository\ReserveRepository.class
 com\example\lab\Repository\UsertypeRepository.class
 com\example\lab\Repository\AppointmentRepository.class
+com\example\lab\Controller\ReferringFormController.class
 com\example\lab\Entity\Title.class
 com\example\lab\Controller\CustomerController.class
 com\example\lab\Entity\Payment.class
