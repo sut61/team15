@@ -35,5 +35,6 @@ com\example\lab\Repository\HospitalRepository.class
 com\example\lab\Entity\Point.class
 com\example\lab\Entity\Reserve.class
 com\example\lab\Entity\Gender.class
+com\example\lab\Controller\CommentController.class
 com\example\lab\Entity\Type.class
 com\example\lab\Entity\Queue.class
