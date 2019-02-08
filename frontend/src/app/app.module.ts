@@ -48,6 +48,9 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { StockmedicineComponent } from './stockmedicine/stockmedicine.component';
+import { PrintstockComponent } from './printstock/printstock.component';
+
 const appRoutes: Routes = [
 { path: 'login', component:LoginComponent },
 { path: 'register',component: RegisterComponent },
@@ -66,6 +69,8 @@ const appRoutes: Routes = [
 { path: 'comment',component: CommentComponent },
 { path: 'editornext',component: EditornextComponent },
 { path: 'last',component: LastComponent },
+{ path: 'stockmedicine',component: StockmedicineComponent },
+{ path: 'printstock',component: PrintstockComponent },
 ];
 
 @NgModule({
@@ -89,6 +94,8 @@ const appRoutes: Routes = [
     CommentComponent,
     EditornextComponent,
     LastComponent,
+    StockmedicineComponent,
+    PrintstockComponent,
   ],
   imports: [
     BrowserModule,

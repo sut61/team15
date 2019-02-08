@@ -1,0 +1,72 @@
+<body style="background-color:#FFFF66">
+
+<div class="container">
+  <div style="text-align:center;" class="card card-container">
+    <form action="/action_page.php">
+      <table align="center" width="430">
+        <h1>
+          <a style="color:black;">STOCK MEDICINE</a>
+        </h1>
+
+        <br>
+        <mat-form-field appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Name" [(ngModel)]="views.nameInput" name="name" >
+        </mat-form-field>
+
+        &nbsp;
+        <mat-form-field class="id medicine" appearance="outline">
+          <input matInput placeholder="id medicine"[(ngModel)]="views.idmedicineInput" name="idmedicine">
+        </mat-form-field>
+
+        <mat-radio-group placeholder="Drugtype" [(ngModel)]="views.drugtypeNameSelect" name="name">
+          <mat-radio-button  *ngFor="let drugtype of drugtype" [value]="drugtype.name">
+            {{drugtype.name}}
+          </mat-radio-button>
+        </mat-radio-group><br>
+        <br>
+
+        <mat-form-field appearance="outline">
+          <mat-select placeholder="รูปแบบยา" [(ngModel)]="views.formmedNameSelect" name="name" >
+            <mat-option *ngFor="let formmed of formmed" [value]="formmed.name">
+              {{formmed.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker1" placeholder="เดือน วัน ปีที่ผลิต" [(ngModel)]="views.dateInput" name="date">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker touchUi #picker1></mat-datepicker>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker2" placeholder="เดือน วัน ปีที่หมดอายุ" [(ngModel)]="views.dateexpInput" name="dateexp">
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker touchUi #picker2></mat-datepicker>
+        </mat-form-field>
+        <br> &nbsp;
+
+
+        <br>
+        <mat-form-field class="form-number" appearance="outline">
+          <input matInput placeholder="จำนวน"[(ngModel)]="views.numberInput" name="number">
+        </mat-form-field>
+        &nbsp;
+        <mat-form-field appearance="outline">
+          <mat-select placeholder="บรรจุภัณฑ์" [(ngModel)]="views.apackageNameSelect" name="name" >
+            <mat-option *ngFor="let apackage of apackage" [value]="apackage.name">
+              {{apackage.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </table>
+    </form>
+    <button mat-flat-button color = "red" (click)="save()" [routerLink]="['/stockmedicine']">บันทึกข้อมูล</button>
+    &nbsp;
+    <button mat-flat-button color = "red" [routerLink]="['/printstock']">รายการทั้งหมด</button>
+  </div>
+</div>
+</body>
+

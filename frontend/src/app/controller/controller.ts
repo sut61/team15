@@ -90,5 +90,21 @@ constructor(
                   getAllcontent(): Observable<any> {
                   return this.httpClient.get(this.API + '/Comment');
                                        }
+    //B5807819 sprint#2
+      getformmed(): Observable<any> {
+      return this.httpClient.get(this.API + '/Formmed');
+      }
+      getdrugtype(): Observable<any> {
+      return this.httpClient.get(this.API + '/Drugtype');
+      }
+      getapackage(): Observable<any> {
+      return this.httpClient.get(this.API + '/Apackage');
+      }
+      getStockmed(): Observable<any>{
+      return this.httpClient.get(this.API+'/Stockmed');
+      }
+      getAllStockmed(): Observable<any>{
+      return this.httpClient.get(this.API+'/Stockmed');
+      }
 
 }
