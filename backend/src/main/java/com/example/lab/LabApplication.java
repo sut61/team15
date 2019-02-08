@@ -22,8 +22,8 @@ public class LabApplication {
 						   ReserveRepository reserveRepository,RoomRepository roomRepository,QueueRepository queueRepository,
 						   AppointmentRepository appointmentRepository,PointRepository pointRepository,ReferringFormRepository referringFormRepository,
 						   BloodGroupRepository bloodGroupRepository,StockmedRepository stockmedRepository, DrugtypeRepository drugtypeRepository,
-						   FormmedRepository formmedRepository, ApackageRepository apackageRepository
-						  ) {
+						   FormmedRepository formmedRepository, ApackageRepository apackageRepository,DispenseRepository dispenseRepository,
+						   InstructionRepository instructionRepository) {
 		return args -> {
 			Stream.of("กรุงเทพมหานคร","กระบี่","กาญจนบุรี","กาฬสินธุ์","กำแพงเพชร","ขอนแก่น","จันทบุรี","ฉะเชิงเทรา","ชลบุรี","ชัยนาท"
 					,"ชัยภูมิ","ชุมพร","เชียงราย","เชียงใหม่","ตรัง","ตราด","ตาก","นครนายก","นครปฐม","นครพนม","นครราชสีมา","นครศรีธรรมราช"
@@ -215,6 +215,43 @@ public class LabApplication {
 
 			stockmedRepository.save(c);
 			stockmedRepository.findAll().forEach(System.out::println);
+
+
+			//B5814909 #Sprint2
+
+			Stream.of("ก่อนอาหาร", "หลังอาหาร").forEach(instruction -> {
+				Instruction a = new Instruction();
+				a.setTakepill(instruction);
+				instructionRepository.save(a);
+			});
+
+			Stream.of("คำเหลา").forEach(customer -> {
+				Customer m = new Customer();
+				m.setFirstname(customer);
+				customerRepository.save(m);
+			});
+
+			Dispense r = new Dispense();
+
+			Customer customer = customerRepository.findByfirstname("คำเหลา");
+			r.setCustomer(customer);
+
+			DentistData dentistData = dentistDataRepository.findByfirstname("หมออาร์ต");
+			r.setDentistData(dentistData);
+
+
+			Instruction instruction = instructionRepository.findBytakepill("ก่อนอาหาร");
+			r.setInstruction(instruction);
+
+
+			Stockmed stockmed = stockmedRepository.findByname("anaerobe bacteria");
+			r.setStockmed(stockmed);
+
+			r.setIdlabel("D12345");
+			r.setBenefit("ลดไข้");
+			r.setNumberpill(10);
+
+			dispenseRepository.save(r);
 
 
 		};
