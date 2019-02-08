@@ -38,6 +38,9 @@ import { DispTableComponent } from './dispTable/dispTable.component';
 import { ReferringComponent } from './referring/referring.component';
 import { ShowComponent } from './show/show.component';
 
+import {HistoryComponent} from './history/history.component';
+import { ShowhistoryComponent } from './showhistory/showhistory.component';
+
 const routes: Routes = [
 { path: '', component:LoginComponent },
 { path: 'login', component:LoginComponent },
@@ -63,6 +66,8 @@ const routes: Routes = [
 { path: 'dispTable' ,component:DispTableComponent },
 {path:'referring',component:ReferringComponent},
 {path:'show',component:ShowComponent},
+{ path: 'history', component: HistoryComponent },
+{ path: 'showhistory', component: ShowhistoryComponent },
 
 ];
 @NgModule({
