@@ -47,10 +47,12 @@ com\example\lab\Entity\Casehis.class
 com\example\lab\Repository\PaymentRepository.class
 com\example\lab\Repository\QueueRepository.class
 com\example\lab\Entity\ReferringForm.class
+com\example\lab\Entity\Medicaltificate.class
 com\example\lab\Controller\DispenseController.class
 com\example\lab\Entity\Appointment.class
 com\example\lab\Controller\HistoryController.class
 com\example\lab\Repository\InstructionRepository.class
+com\example\lab\Entity\Treatmentrights.class
 com\example\lab\Entity\Formmed.class
 com\example\lab\Entity\Dispense.class
 com\example\lab\Repository\ProvinceRepository.class
