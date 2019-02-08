@@ -20,7 +20,7 @@ public class LabApplication {
 						   ProvinceRepository provinceRepository,TitleRepository titleRepository, TypeRepository typeRepository,
 						   CustomerRepository customerRepository,DentistDataRepository dentistDataRepository, HospitalRepository hospitalRepository,
 						   ReserveRepository reserveRepository,RoomRepository roomRepository,QueueRepository queueRepository,
-						   AppointmentRepository appointmentRepository
+						   AppointmentRepository appointmentRepository,PointRepository pointRepository
 						  ) {
 		return args -> {
 			Stream.of("กรุงเทพมหานคร","กระบี่","กาญจนบุรี","กาฬสินธุ์","กำแพงเพชร","ขอนแก่น","จันทบุรี","ฉะเชิงเทรา","ชลบุรี","ชัยนาท"
@@ -124,6 +124,13 @@ public class LabApplication {
 			Type typecus = typeRepository.findBynameType("");
 			ap.setType(typecus);
 			appointmentRepository.save(ap);
+			//B5804566  data Point
+			Stream.of(1,2,3,4,5).forEach(point->{
+				Point p = new Point();
+				p.setPoint(point);
+				pointRepository.save(p);
+			});
+
 
 
 
