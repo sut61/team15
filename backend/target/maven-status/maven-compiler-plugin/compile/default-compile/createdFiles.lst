@@ -38,7 +38,9 @@ com\example\lab\Entity\DentistData.class
 com\example\lab\Entity\Province.class
 com\example\lab\Entity\Customer.class
 com\example\lab\Repository\CasehisRepository.class
+com\example\lab\Repository\TreatmentrightsRepository.class
 com\example\lab\Entity\Hospital.class
+com\example\lab\Repository\MedicaltificateRepository.class
 com\example\lab\Repository\ReserveRepository.class
 com\example\lab\Repository\UsertypeRepository.class
 com\example\lab\Entity\Apackage.class
