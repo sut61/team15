@@ -57,7 +57,7 @@ constructor(
     getAllReserve(): Observable<any> {
       return this.httpClient.get(this.API + '/Reserve');
       }
-      
+
       //Mild
       getAppointment(): Observable<any> {
             return this.httpClient.get(this.API + '/Appointment');
@@ -131,5 +131,17 @@ constructor(
             ReferringForm(cusName:String,DentName:String,type:String,b:String,db:Date,tel:String): Observable<any>{
             return this.httpClient.get(this.API+"/ReferringForm/"+db+"/"+cusName+"/"+DentName+"/"+type+"/"+b+"/"+tel);
             }
+
+      //B5815074 SP2
+
+      getdoctorname(): Observable<any> {
+      return this.httpClient.get(this.API + '/DentistData');
+      }
+      getcasehis(): Observable<any> {
+      return this.httpClient.get(this.API + '/Casehis');
+      }
+      getAllhistory(): Observable<any> {
+      return this.httpClient.get(this.API + '/History');
+      }
 
 }

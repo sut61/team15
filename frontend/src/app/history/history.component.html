@@ -1,0 +1,61 @@
+<body style="background-color: #FFFF88">
+<div style="text-align:center"><br><br>
+  <h1>
+    <a style="color:black;">ระบบเก็บประวัติการรักษา</a>
+  </h1>
+</div>
+<div style="text-align:center;" class="card card-container">
+  <div style="text-align:center;">
+    <form action="/action_page.php">
+      <table align="center" width="430">
+        <br>
+        <mat-form-field appearance="outline">
+          <mat-select placeholder="คนไข้" [(ngModel)]="views.customerSelect" name="firstname" >
+            <mat-option *ngFor="let firstname of customer" [value]="firstname.firstname">
+              {{firstname.firstname}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="outline">
+          <mat-select placeholder="หมอ" [(ngModel)]="views.doctorSelect" name="firstname" >
+            <mat-option *ngFor="let firstname of doctor" [value]="firstname.firstname">
+              {{firstname.firstname}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="outline">
+          <mat-select placeholder="Type" [(ngModel)]="views.nameTypeSelect" name="nameType" >
+            <mat-option *ngFor="let nametype of nameType" [value]="nametype.nameType">
+              {{nametype.nameType}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <br>
+        <mat-form-field appearance="outline">
+          <mat-select placeholder="case" [(ngModel)]="views.casehisSelect" name="casehis" >
+            <mat-option *ngFor="let casehis of casehis" [value]="casehis.casehis">
+              {{casehis.casehis}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <br>
+
+        <mat-form-field class="form-IDcard" appearance="outline">
+          <input matInput placeholder="note"[(ngModel)]="views.noteInput" name="note">
+        </mat-form-field>
+        <br>
+
+        <br>
+      </table>
+    </form>
+    <button mat-flat-button color="yellow" (click)="save_func()" >บันทึก</button>
+    &nbsp;
+    <button mat-flat-button color="yellow" [routerLink]="['/showhistory']" >ถัดไป </button>
+  </div>
+</div>
+</body>
+
