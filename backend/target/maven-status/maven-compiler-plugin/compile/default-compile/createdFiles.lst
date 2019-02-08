@@ -44,6 +44,7 @@ com\example\lab\Repository\PaymentRepository.class
 com\example\lab\Repository\QueueRepository.class
 com\example\lab\Entity\ReferringForm.class
 com\example\lab\Entity\Appointment.class
+com\example\lab\Repository\InstructionRepository.class
 com\example\lab\Entity\Formmed.class
 com\example\lab\Entity\Dispense.class
 com\example\lab\Repository\ProvinceRepository.class
@@ -53,4 +54,5 @@ com\example\lab\Repository\StockmedRepository.class
 com\example\lab\Repository\CustomerRepository.class
 com\example\lab\Repository\HospitalRepository.class
 com\example\lab\Entity\BloodGroup.class
+com\example\lab\Repository\DispenseRepository.class
 com\example\lab\Repository\DrugtypeRepository.class
