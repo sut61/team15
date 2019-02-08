@@ -5,8 +5,14 @@ com\example\lab\Repository\AppointmentRepository.class
 com\example\lab\Controller\ReferringFormController.class
 com\example\lab\Entity\Title.class
 com\example\lab\Entity\Payment.class
+<<<<<<< HEAD
 com\example\lab\Repository\ReferringFormRepository.class
 com\example\lab\Repository\ApackageRepository.class
+=======
+com\example\lab\Entity\Casehis.class
+com\example\lab\Repository\PaymentRepository.class
+com\example\lab\Repository\QueueRepository.class
+>>>>>>> B5815074
 com\example\lab\Entity\Usertype.class
 com\example\lab\Repository\PointRepository.class
 com\example\lab\Controller\UserController.class
@@ -15,8 +21,12 @@ com\example\lab\Entity\User.class
 com\example\lab\Repository\UserRepository.class
 com\example\lab\Repository\GenderRepository.class
 com\example\lab\Repository\RoomRepository.class
+<<<<<<< HEAD
 com\example\lab\Repository\CommentRepository.class
 com\example\lab\Entity\Comment.class
+=======
+com\example\lab\Entity\History.class
+>>>>>>> B5815074
 com\example\lab\Entity\Room.class
 com\example\lab\Repository\TitleRepository.class
 com\example\lab\Controller\AppointmentController.class
