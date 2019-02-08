@@ -126,7 +126,7 @@ public class TestComment {
     @Test
     public void testCommentMax() {
         Comment c = new Comment();
-        c.setComment("วันหนึ่งเฉนเดินเข้าป่าฉันเจอนกตัวหนึ่งมันถามฉันว่าจะไปไหนฉันจึงบอกอยากไปให้ไกลไกลเกินกว่าที่ฉันเคยไป");
+        c.setComment("วันหนึ่งเฉนเดินเข้าป่าฉันเจอนกตัวหนึ่งมันถามฉันว่าจะไปไหนฉันจึงบอกอยากไปให้ไกล");
         c.setCustomer(customer);
         c.setPoint(point);
         c.setDenname(dentistData);
