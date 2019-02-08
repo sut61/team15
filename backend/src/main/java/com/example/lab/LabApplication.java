@@ -23,7 +23,8 @@ public class LabApplication {
 						   AppointmentRepository appointmentRepository,PointRepository pointRepository,ReferringFormRepository referringFormRepository,
 						   BloodGroupRepository bloodGroupRepository,StockmedRepository stockmedRepository, DrugtypeRepository drugtypeRepository,
 						   FormmedRepository formmedRepository, ApackageRepository apackageRepository,DispenseRepository dispenseRepository,
-						   InstructionRepository instructionRepository, CasehisRepository casehisRepository, HistoryRepository historyRepository) {
+						   InstructionRepository instructionRepository, CasehisRepository casehisRepository, HistoryRepository historyRepository,MedicaltificateRepository medicaltificateRepository,
+						   TreatmentrightsRepository treatmentrightsRepository) {
 		return args -> {
 			Stream.of("กรุงเทพมหานคร","กระบี่","กาญจนบุรี","กาฬสินธุ์","กำแพงเพชร","ขอนแก่น","จันทบุรี","ฉะเชิงเทรา","ชลบุรี","ชัยนาท"
 					,"ชัยภูมิ","ชุมพร","เชียงราย","เชียงใหม่","ตรัง","ตราด","ตาก","นครนายก","นครปฐม","นครพนม","นครราชสีมา","นครศรีธรรมราช"
@@ -113,6 +114,13 @@ public class LabApplication {
 				hospitalRepository.save(hos);
 				hospitalRepository.save(hos1);
 
+
+				Stream.of("ไม่มี","สิทธฺ์30บาท","ประกันสังคม","อื่นๆ").forEach(treatment -> {
+					Treatmentrights tr = new Treatmentrights();
+					tr.setTreatment(treatment);
+					treatmentrightsRepository.save(tr);
+				});
+
 				//B5814909
 				Stream.of("101", "102", "103", "104").forEach(room -> {
 					Room a = new Room();
@@ -140,7 +148,7 @@ public class LabApplication {
 					customerRepository.save(c);
 
 			});
-			Stream.of("หมออาร์ต","ทวี").forEach(dentisname->{
+			Stream.of("หมออาร์ต","ทวี","ta").forEach(dentisname->{
 					DentistData d = new DentistData();
 					d.setFirstname(dentisname);
 					d.setLastname("สุดหล่อ");
@@ -231,7 +239,7 @@ public class LabApplication {
 				instructionRepository.save(a);
 			});
 
-			Stream.of("คำเหลา","อนุพงษ์").forEach(customer -> {
+			Stream.of("คำเหลา","อนุพงษ์","new").forEach(customer -> {
 				Customer m = new Customer();
 				m.setFirstname(customer);
 				customerRepository.save(m);
@@ -279,6 +287,27 @@ public class LabApplication {
 
 			historyRepository.save(h);
 			historyRepository.findAll().forEach(System.out::println);
+
+			//b5803569
+			Medicaltificate me = new Medicaltificate();
+			me.setListorder("กก");
+			me.setComment("บริการดีมาก");
+
+			DentistData dentistData2 = dentistDataRepository.findByfirstname("ta");
+			me.setDentistData(dentistData2);
+
+			Customer customer2 = customerRepository.findByfirstname("new");
+			me.setCustomer(customer2);
+			me.setDendate(new Date());
+			Type type2 = typeRepository.findBynameType("อุดฟัน");
+			me.setType(type2);
+
+			Treatmentrights treatmentrights = treatmentrightsRepository.findBytreatment("ไม่มี");
+			me.setTreatmentrights(treatmentrights);
+
+			medicaltificateRepository.save(me);
+			medicaltificateRepository.findAll().forEach(System.out::println);
+
 
 		};
 	}

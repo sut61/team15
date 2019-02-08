@@ -1,5 +1,6 @@
 com\example\lab\Controller\DentistDataController.class
 com\example\lab\LabApplication.class
+com\example\lab\Controller\MedicaltificateController.class
 com\example\lab\Controller\StockmedController.class
 com\example\lab\Repository\AppointmentRepository.class
 com\example\lab\Controller\ReferringFormController.class
