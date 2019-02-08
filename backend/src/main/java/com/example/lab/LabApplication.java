@@ -21,7 +21,8 @@ public class LabApplication {
 						   CustomerRepository customerRepository,DentistDataRepository dentistDataRepository, HospitalRepository hospitalRepository,
 						   ReserveRepository reserveRepository,RoomRepository roomRepository,QueueRepository queueRepository,
 						   AppointmentRepository appointmentRepository,PointRepository pointRepository,ReferringFormRepository referringFormRepository,
-						   BloodGroupRepository bloodGroupRepository
+						   BloodGroupRepository bloodGroupRepository,StockmedRepository stockmedRepository, DrugtypeRepository drugtypeRepository,
+						   FormmedRepository formmedRepository, ApackageRepository apackageRepository
 						  ) {
 		return args -> {
 			Stream.of("กรุงเทพมหานคร","กระบี่","กาญจนบุรี","กาฬสินธุ์","กำแพงเพชร","ขอนแก่น","จันทบุรี","ฉะเชิงเทรา","ชลบุรี","ชัยนาท"
@@ -148,9 +149,72 @@ public class LabApplication {
 				bloodGroupRepository.save(b);
 			});
 
+			//B5807819#2
+			Formmed f = new Formmed();
+			f.setName("ยาเม็ด");
+			Formmed f1 = new Formmed();
+			f1.setName("ยาน้ำ");
+			Formmed f2 = new Formmed();
+			f2.setName("ยาฉีด");
+			Formmed f3 = new Formmed();
+			f3.setName("อื่นๆ");
+			formmedRepository.save(f);
+			formmedRepository.save(f1);
+			formmedRepository.save(f2);
+			formmedRepository.save(f3);
 
+			Drugtype d = new Drugtype();
+			d.setName("ยาอันตราย");
+			Drugtype d2 = new Drugtype();
+			d2.setName("ยาปฏิชีวนะ");
+			Drugtype d3 = new Drugtype();
+			d3.setName("ยาทั่วไป");
+			drugtypeRepository.save(d);
+			drugtypeRepository.save(d2);
+			drugtypeRepository.save(d3);
 
+			Apackage ap = new Apackage();
+			ap.setName("ขวด");
+			Apackage ap1 = new Apackage();
+			ap1.setName("แผง");
+			Apackage ap2 = new Apackage();
+			ap2.setName("แพ็ค");
+			apackageRepository.save(ap);
+			apackageRepository.save(ap1);
+			apackageRepository.save(ap2);
 
+			Stockmed c = new Stockmed();
+			c.setName("anaerobe bacteria");
+			c.setIdmedicine("M1234");
+			c.setDate(new Date());
+			c.setDateexp(new Date());
+			c.setNumber(4);
+
+			Drugtype drugtype = drugtypeRepository.findByname("ยาอันตราย");
+			Drugtype drugtype2 = drugtypeRepository.findByname("ยาปฏิชีวนะ");
+			Drugtype drugtype3 = drugtypeRepository.findByname("ยาทั่วไป");
+			c.setDrugtype(drugtype);
+			c.setDrugtype(drugtype2);
+			c.setDrugtype(drugtype3);
+
+			Apackage apackage = apackageRepository.findByname("ขวด");
+			Apackage apackage1 = apackageRepository.findByname("แผง");
+			Apackage apackage2 = apackageRepository.findByname("แพ็ค");
+			c.setApackage(apackage);
+			c.setApackage(apackage1);
+			c.setApackage(apackage2);
+
+			Formmed formmed = formmedRepository.findByname("ยาเม็ด");
+			Formmed formmed1 = formmedRepository.findByname("ยาน้ำ");
+			Formmed formmed2 = formmedRepository.findByname("ยาฉีด");
+			Formmed formmed3 = formmedRepository.findByname("อื่นๆ");
+			c.setFormmed(formmed);
+			c.setFormmed(formmed1);
+			c.setFormmed(formmed2);
+			c.setFormmed(formmed3);
+
+			stockmedRepository.save(c);
+			stockmedRepository.findAll().forEach(System.out::println);
 
 
 		};
