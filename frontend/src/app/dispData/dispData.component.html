@@ -1,0 +1,84 @@
+<body style="background-color:#ccffff">
+<br>
+<div class="container">
+  <div style="text-align:center;" class="card card-container">
+  <h1>
+    <a style="color:black;">รายการจ่ายยา</a>
+  </h1>
+
+<form class="form">
+
+  <mat-form-field>
+    <mat-select placeholder="ชื่อ" [(ngModel)]="views.cusNameSelect" name="firstname" >
+      <mat-option *ngFor="let customer of customer" [value]="customer.firstname">
+        {{customer.firstname}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field>
+    <mat-select placeholder="ชื่อยา" [(ngModel)]="views.medNameSelect" name="name" >
+      <mat-option *ngFor="let stockmed of stockmed" [value]="stockmed.name">
+        {{stockmed.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field appearance="outline">
+    <mat-label>หมายเลขการจ่ายยา</mat-label>
+    <input matInput placeholder="ID" [(ngModel)]="views.idlabelInput" name="idlabel" >
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field appearance="outline">
+    <mat-label>จำนวนยา</mat-label>
+    <input matInput placeholder="จำนวนยา" [(ngModel)]="views.numberpillInput" name="numberpill" >
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field>
+    <mat-select placeholder="เวลากิน" [(ngModel)]="views.takeNameSelect" name="takepill" >
+      <mat-option *ngFor="let instruction of instruction" [value]="instruction.takepill">
+        {{instruction.takepill}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field appearance="outline">
+    <mat-label>สรรพคุณ</mat-label>
+    <input matInput placeholder="สรรพคุณ" [(ngModel)]="views.benefitInput" name="benefit" >
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field>
+    <mat-select placeholder="ผู้รับรอง" [(ngModel)]="views.docNameSelect" name="firstname" >
+      <mat-option *ngFor="let dentistData of dentis" [value]="dentistData.firstname">
+        {{dentistData.firstname}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <br>
+
+
+  <div class="button-1" style="text-align:center;">
+    <button mat-raised-button (click)="save()" >บันทึก</button>
+    &nbsp;
+    <button mat-raised-button [routerLink]="['/dispTable']">แสดงรายการ</button>
+  </div>
+
+  <br>
+
+</form>
+</div>
+</div>
+</body>

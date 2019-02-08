@@ -1,0 +1,71 @@
+<body style="background-color:#66ff99">
+<div class = "">
+  <br>
+  <h1>
+    <a style="color:black;">รายการจอง</a>
+  </h1>
+
+<div style="text-align:center:">
+
+  <form>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="No">
+        <th mat-header-cell *matHeaderCellDef style="text-align:center;" > No </th>
+        <td mat-cell *matCellDef="let element"> {{element.dispenseId}} </td>
+      </ng-container>
+
+    <ng-container matColumnDef="Customer">
+      <th mat-header-cell *matHeaderCellDef style="text-align:center;" > Customer Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.customer.firstname}} </td>
+    </ng-container>
+
+      <ng-container matColumnDef="Stockmed">
+        <th mat-header-cell *matHeaderCellDef style="text-align:center;" > Stock Medicine </th>
+        <td mat-cell *matCellDef="let element"> {{element.stockmed.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Id">
+        <th mat-header-cell *matHeaderCellDef style="text-align:center;" >ID</th>
+        <td mat-cell *matCellDef="let element"> {{element.idlabel}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Numberpill">
+        <th mat-header-cell *matHeaderCellDef style="text-align:center;" >Pill Number</th>
+        <td mat-cell *matCellDef="let element"> {{element.numberpill}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Takepill">
+        <th mat-header-cell *matHeaderCellDef style="text-align:center;" >เวลากิน</th>
+        <td mat-cell *matCellDef="let element"> {{element.instruction.takepill}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Benefit">
+        <th mat-header-cell *matHeaderCellDef style="text-align:center;" >สรรพคุณ</th>
+        <td mat-cell *matCellDef="let element"> {{element.benefit}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="DentistData">
+        <th mat-header-cell *matHeaderCellDef style="text-align:center;" > Dentist Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.dentistData.firstname}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <br>
+
+    <div class="button-1">
+      <button mat-raised-button [routerLink]="['/dispData']" >กลับ</button>
+      &nbsp;
+      <button mat-raised-button [routerLink]="['/tab']" >หน้าแรก</button>
+    </div>
+    <br>
+
+  </form>
+  </div>
+</div>
+</body>
+
+

@@ -32,6 +32,9 @@ import { LastComponent } from './last/last.component';
 import { StockmedicineComponent } from './stockmedicine/stockmedicine.component';
 import { PrintstockComponent } from './printstock/printstock.component';
 
+import { DispDataComponent } from './dispData/dispData.component';
+import { DispTableComponent } from './dispTable/dispTable.component';
+
 const routes: Routes = [
 { path: '', component:LoginComponent },
 { path: 'login', component:LoginComponent },
@@ -53,6 +56,8 @@ const routes: Routes = [
 { path: 'last',      component: LastComponent },
 { path: 'stockmedicine',component: StockmedicineComponent },
 { path: 'printstock',component: PrintstockComponent },
+{ path: 'dispData' ,component:DispDataComponent },
+{ path: 'dispTable' ,component:DispTableComponent },
 
 ];
 @NgModule({

@@ -107,4 +107,15 @@ constructor(
       return this.httpClient.get(this.API+'/Stockmed');
       }
 
+      //B5814909 sprint2
+      getinstruction(): Observable<any> {
+          return this.httpClient.get(this.API + '/Instruction');
+          }
+      getDispense(): Observable<any>{
+          return this.httpClient.get(this.API+'/Dispense');
+      }
+      getAllDispense(): Observable<any> {
+          return this.httpClient.get(this.API + '/Dispense');
+      }
+
 }
