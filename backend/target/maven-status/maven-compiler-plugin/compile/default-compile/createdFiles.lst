@@ -45,8 +45,10 @@ com\example\lab\Repository\QueueRepository.class
 com\example\lab\Entity\ReferringForm.class
 com\example\lab\Entity\Appointment.class
 com\example\lab\Entity\Formmed.class
+com\example\lab\Entity\Dispense.class
 com\example\lab\Repository\ProvinceRepository.class
 com\example\lab\Controller\ReserveController.class
+com\example\lab\Entity\Instruction.class
 com\example\lab\Repository\StockmedRepository.class
 com\example\lab\Repository\CustomerRepository.class
 com\example\lab\Repository\HospitalRepository.class
