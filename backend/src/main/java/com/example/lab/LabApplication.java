@@ -124,11 +124,26 @@ public class LabApplication {
 			Type typecus = typeRepository.findBynameType("");
 			ap.setType(typecus);
 			appointmentRepository.save(ap);
+
 			//B5804566  data Point
 			Stream.of(1,2,3,4,5).forEach(point->{
 				Point p = new Point();
 				p.setPoint(point);
 				pointRepository.save(p);
+			});
+			Stream.of("Arttis").forEach(username->{
+					Customer c = new Customer();
+					c.setFirstname(username);
+					c.setLastname("khamamprai");
+					customerRepository.save(c);
+
+			});
+			Stream.of("หมออาร์ต").forEach(dentisname->{
+					DentistData d = new DentistData();
+					d.setFirstname(dentisname);
+					d.setLastname("สุดหล่อ");
+					dentistDataRepository.save(d);
+
 			});
 
 
