@@ -51,6 +51,9 @@ import { HttpModule } from '@angular/http';
 import { StockmedicineComponent } from './stockmedicine/stockmedicine.component';
 import { PrintstockComponent } from './printstock/printstock.component';
 
+import { DispDataComponent } from './dispData/dispData.component';
+import { DispTableComponent } from './dispTable/dispTable.component';
+
 const appRoutes: Routes = [
 { path: 'login', component:LoginComponent },
 { path: 'register',component: RegisterComponent },
@@ -71,6 +74,8 @@ const appRoutes: Routes = [
 { path: 'last',component: LastComponent },
 { path: 'stockmedicine',component: StockmedicineComponent },
 { path: 'printstock',component: PrintstockComponent },
+{ path: 'dispData' ,component:DispDataComponent },
+{ path: 'dispTable' ,component:DispTableComponent },
 ];
 
 @NgModule({
@@ -96,6 +101,8 @@ const appRoutes: Routes = [
     LastComponent,
     StockmedicineComponent,
     PrintstockComponent,
+    DispDataComponent,
+    DispTableComponent,
   ],
   imports: [
     BrowserModule,
