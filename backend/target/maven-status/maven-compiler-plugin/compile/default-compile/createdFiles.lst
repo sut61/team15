@@ -43,6 +43,7 @@ com\example\lab\Controller\CustomerController.class
 com\example\lab\Repository\PaymentRepository.class
 com\example\lab\Repository\QueueRepository.class
 com\example\lab\Entity\ReferringForm.class
+com\example\lab\Controller\DispenseController.class
 com\example\lab\Entity\Appointment.class
 com\example\lab\Repository\InstructionRepository.class
 com\example\lab\Entity\Formmed.class
