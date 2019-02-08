@@ -35,6 +35,9 @@ import { PrintstockComponent } from './printstock/printstock.component';
 import { DispDataComponent } from './dispData/dispData.component';
 import { DispTableComponent } from './dispTable/dispTable.component';
 
+import { ReferringComponent } from './referring/referring.component';
+import { ShowComponent } from './show/show.component';
+
 const routes: Routes = [
 { path: '', component:LoginComponent },
 { path: 'login', component:LoginComponent },
@@ -58,6 +61,8 @@ const routes: Routes = [
 { path: 'printstock',component: PrintstockComponent },
 { path: 'dispData' ,component:DispDataComponent },
 { path: 'dispTable' ,component:DispTableComponent },
+{path:'referring',component:ReferringComponent},
+{path:'show',component:ShowComponent},
 
 ];
 @NgModule({

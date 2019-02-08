@@ -118,4 +118,18 @@ constructor(
           return this.httpClient.get(this.API + '/Dispense');
       }
 
+      //B5800995 Sprint2
+      getReferringForm(): Observable<any> {
+            return this.httpClient.get(this.API + '/ReferringForm');
+            }
+            getBloodGroup(): Observable<any>{
+                return this.httpClient.get(this.API+'/BloodGroup');
+            }
+            getnamegroup(): Observable<any> {
+                  return this.httpClient.get(this.API + '/BloodGroup');
+                  }
+            ReferringForm(cusName:String,DentName:String,type:String,b:String,db:Date,tel:String): Observable<any>{
+            return this.httpClient.get(this.API+"/ReferringForm/"+db+"/"+cusName+"/"+DentName+"/"+type+"/"+b+"/"+tel);
+            }
+
 }

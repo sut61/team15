@@ -19,3 +19,16 @@ export class Appointment{
     public typename:String;
     public date:Date;
 }
+export class namegroup{
+    public ID:String;
+    public nameGroup:String;
+}
+
+export class ReferringForm{
+    public namecus:String;
+    public namedent:String;
+    public typename:String;
+    public date:Date;
+    public group:String;
+    public tel:String;
+}
