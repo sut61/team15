@@ -54,6 +54,10 @@ import { PrintstockComponent } from './printstock/printstock.component';
 import { DispDataComponent } from './dispData/dispData.component';
 import { DispTableComponent } from './dispTable/dispTable.component';
 
+import { ReferringComponent } from './referring/referring.component';
+import { ShowComponent } from './show/show.component';
+import { ShowService } from './Model/ShowsService';
+
 const appRoutes: Routes = [
 { path: 'login', component:LoginComponent },
 { path: 'register',component: RegisterComponent },
@@ -76,6 +80,10 @@ const appRoutes: Routes = [
 { path: 'printstock',component: PrintstockComponent },
 { path: 'dispData' ,component:DispDataComponent },
 { path: 'dispTable' ,component:DispTableComponent },
+{path:'referring',component:ReferringComponent},
+{path:'show',component:ShowComponent},
+
+
 ];
 
 @NgModule({
@@ -103,6 +111,8 @@ const appRoutes: Routes = [
     PrintstockComponent,
     DispDataComponent,
     DispTableComponent,
+ReferringComponent,
+ShowComponent,
   ],
   imports: [
     BrowserModule,
@@ -131,7 +141,7 @@ const appRoutes: Routes = [
     HttpModule,
     MatIconModule,
   ],
-  providers: [Controller,PrintService],
+  providers: [Controller,PrintService,ShowService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

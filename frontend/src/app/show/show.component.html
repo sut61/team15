@@ -1,0 +1,47 @@
+<body style="background-color:rgb(243, 203, 72)">
+  <br><br>
+
+  <div style="text-align:left;" class="card card-container">
+    <h1>ใบย้ายสถานที่ทำฟัน</h1><br>
+
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-6">
+          <label color="black">ชื่อ-สกุล : {{refe.namecus}}</label><br>
+        </div>
+        <div class="col-md-6">
+          <label style="color:black">เกิดวันที่ : {{refe.date}}</label>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-6">
+          <label style="color: black">หมู่เลือด : {{refe.group}}</label>
+        </div>
+        <div class="col-md-6">
+          <label style="color: black">เบอร์โทร : {{refe.tel}}</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label style="color:black">แพทย์ที่รักษา : {{refe.namedent}}</label>
+        </div>
+        <div class="col-md-6">
+          <label style="color:black">ประเภทการรักษา : {{refe.typename}}</label>
+        </div>
+      </div>
+        
+      <div class="row">
+        <div class="col-md-5 form-inline">
+          <br>
+          <button mat-raised-button class="button-margin">Print</button>
+          <button mat-raised-button color="warn" [routerLink]="['/tab']">ย้อนกลับ</button>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+</body>
