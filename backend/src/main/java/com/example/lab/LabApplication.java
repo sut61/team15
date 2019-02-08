@@ -20,7 +20,8 @@ public class LabApplication {
 						   ProvinceRepository provinceRepository,TitleRepository titleRepository, TypeRepository typeRepository,
 						   CustomerRepository customerRepository,DentistDataRepository dentistDataRepository, HospitalRepository hospitalRepository,
 						   ReserveRepository reserveRepository,RoomRepository roomRepository,QueueRepository queueRepository,
-						   AppointmentRepository appointmentRepository,PointRepository pointRepository
+						   AppointmentRepository appointmentRepository,PointRepository pointRepository,ReferringFormRepository referringFormRepository,
+						   BloodGroupRepository bloodGroupRepository
 						  ) {
 		return args -> {
 			Stream.of("กรุงเทพมหานคร","กระบี่","กาญจนบุรี","กาฬสินธุ์","กำแพงเพชร","ขอนแก่น","จันทบุรี","ฉะเชิงเทรา","ชลบุรี","ชัยนาท"
@@ -117,13 +118,7 @@ public class LabApplication {
 						queueRepository.save(q);
 				});
 
-			//B5800995
 
-			Appointment ap = new Appointment();
-			ap.setDate(new Date());
-			Type typecus = typeRepository.findBynameType("");
-			ap.setType(typecus);
-			appointmentRepository.save(ap);
 
 			//B5804566  data Point
 			Stream.of(1,2,3,4,5).forEach(point->{
@@ -145,6 +140,15 @@ public class LabApplication {
 					dentistDataRepository.save(d);
 
 			});
+
+			//Refering
+			Stream.of("A","B","O","AB").forEach(nameGroup ->{
+				BloodGroup b = new BloodGroup();
+				b.setNameGroup(nameGroup);
+				bloodGroupRepository.save(b);
+			});
+
+
 
 
 
