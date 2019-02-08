@@ -23,7 +23,7 @@ public class LabApplication {
 						   AppointmentRepository appointmentRepository,PointRepository pointRepository,ReferringFormRepository referringFormRepository,
 						   BloodGroupRepository bloodGroupRepository,StockmedRepository stockmedRepository, DrugtypeRepository drugtypeRepository,
 						   FormmedRepository formmedRepository, ApackageRepository apackageRepository,DispenseRepository dispenseRepository,
-						   InstructionRepository instructionRepository) {
+						   InstructionRepository instructionRepository, CasehisRepository casehisRepository, HistoryRepository historyRepository) {
 		return args -> {
 			Stream.of("กรุงเทพมหานคร","กระบี่","กาญจนบุรี","กาฬสินธุ์","กำแพงเพชร","ขอนแก่น","จันทบุรี","ฉะเชิงเทรา","ชลบุรี","ชัยนาท"
 					,"ชัยภูมิ","ชุมพร","เชียงราย","เชียงใหม่","ตรัง","ตราด","ตาก","นครนายก","นครปฐม","นครพนม","นครราชสีมา","นครศรีธรรมราช"
@@ -98,6 +98,12 @@ public class LabApplication {
 				typecus.setName(nametype);
 				typeRepository.save(typecus);
 			});
+
+			Stream.of("ปกติ","พิเศษ").forEach(cases -> {
+				Casehis ca = new Casehis();
+				ca.setCasehis(cases);
+				casehisRepository.save(ca);
+			});
 			//B5803569
 				Hospital hos = new Hospital();
 				hos.setName("รัฐบาล");
@@ -134,7 +140,7 @@ public class LabApplication {
 					customerRepository.save(c);
 
 			});
-			Stream.of("หมออาร์ต").forEach(dentisname->{
+			Stream.of("หมออาร์ต","ทวี").forEach(dentisname->{
 					DentistData d = new DentistData();
 					d.setFirstname(dentisname);
 					d.setLastname("สุดหล่อ");
@@ -225,7 +231,7 @@ public class LabApplication {
 				instructionRepository.save(a);
 			});
 
-			Stream.of("คำเหลา").forEach(customer -> {
+			Stream.of("คำเหลา","อนุพงษ์").forEach(customer -> {
 				Customer m = new Customer();
 				m.setFirstname(customer);
 				customerRepository.save(m);
@@ -253,6 +259,26 @@ public class LabApplication {
 
 			dispenseRepository.save(r);
 
+			//B5815074
+			History h = new History();
+			h.setNote("อาการปกติ");
+
+			h.setHisdate(new Date());
+
+			Customer customer1 = customerRepository.findByfirstname("อนุพงษ์");
+			h.setCustomer(customer1);
+
+			DentistData dentistData1 = dentistDataRepository.findByfirstname("ทวี");
+			h.setDentistData(dentistData1);
+
+			Casehis casehis = casehisRepository.findBycasehis("ปกติ");
+			h.setCasehis(casehis);
+
+			Type type = typeRepository.findBynameType("อุดฟัน");
+			h.setType(type);
+
+			historyRepository.save(h);
+			historyRepository.findAll().forEach(System.out::println);
 
 		};
 	}
