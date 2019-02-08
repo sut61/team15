@@ -1,4 +1,5 @@
 com\example\lab\TestComment.class
 com\example\lab\TestStockmed.class
 com\example\lab\DispenseTest.class
+com\example\lab\ReferringTest.class
 com\example\lab\LabApplicationTests.class
