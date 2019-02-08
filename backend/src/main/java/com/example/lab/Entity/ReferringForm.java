@@ -51,6 +51,21 @@ public class ReferringForm {
     public Date getDate(){return date;}
     public void setDate(Date date){this.date = date;}
 
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
+
+    public BloodGroup getBloodGroup() {
+        return bloodGroup;
+    }
+
+    public void setBloodGroup(BloodGroup bloodGroup) {
+        this.bloodGroup = bloodGroup;
+    }
 
     public Type getType(){return type;}
     public void setType(Type type){this.type = type;}
