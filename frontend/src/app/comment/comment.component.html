@@ -1,0 +1,62 @@
+<body>
+<br><div>
+  <h1>
+    <a style="color:black;"><font size="6">COMMENT</font></a>
+  </h1>
+</div>
+
+
+
+<div>
+  <h2>ชื่อลูกค้า</h2>
+  <mat-form-field>
+    <mat-select placeholder="Customer" [(ngModel)]="views.customerNameSelect" name="firstname">
+      <mat-option *ngFor="let customer of customer" [value]="customer.firstname">
+        {{customer.firstname}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+
+<div>
+  <h2>ชื่อหมอ</h2>
+  <mat-form-field>
+    <mat-select placeholder="Docter" [(ngModel)]="views.docterNameSelect" name="firstname">
+      <mat-option *ngFor="let docter of docter" [value]="docter.firstname">
+        {{docter.firstname}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div>
+  <h2 class = "label">ให้คะแนน</h2>
+<mat-form-field>
+  <mat-select placeholder="Point" [(ngModel)]="views.PointSelect" name="point">
+    <mat-option *ngFor="let point of point" [value]="point.point">
+      {{point.point}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+</div>
+  <br>
+<div>
+  <h2 class = "label_edit">กรอกข้อความแสดงความคิดเห็น</h2>
+  <mat-form-field class = "detail_text">
+    <textarea matInput [(ngModel)]="views.contentInput" rows="4" cols="50"></textarea>
+  </mat-form-field>
+
+  <br><br><br>
+</div>
+
+<br>
+<div class="button-1">
+  <button mat-raised-button  (click)="save()">ตกลง</button><button mat-raised-button   [routerLink]="['/editornext']">ตาราง</button>
+</div>
+<br>
+<br><br>
+</body>
+
+
+
+
