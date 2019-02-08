@@ -13,6 +13,7 @@ com\example\lab\Controller\CustomerController.class
 com\example\lab\Entity\Payment.class
 com\example\lab\Repository\PaymentRepository.class
 com\example\lab\Repository\QueueRepository.class
+com\example\lab\Entity\ReferringForm.class
 com\example\lab\Entity\Usertype.class
 com\example\lab\Repository\PointRepository.class
 com\example\lab\Controller\UserController.class
@@ -34,6 +35,7 @@ com\example\lab\Repository\CustomerRepository.class
 com\example\lab\Repository\HospitalRepository.class
 com\example\lab\Entity\Point.class
 com\example\lab\Entity\Reserve.class
+com\example\lab\Entity\BloodGroup.class
 com\example\lab\Entity\Gender.class
 com\example\lab\Controller\CommentController.class
 com\example\lab\Entity\Type.class
