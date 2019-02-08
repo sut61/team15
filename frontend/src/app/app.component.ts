@@ -25,6 +25,10 @@ import { FileworkComponent } from './filework/filework.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { PrintComponent } from './print/print.component';
 
+import { CommentComponent } from './comment/comment.component';
+import { EditornextComponent } from './editornext/editornext.component';
+import { LastComponent } from './last/last.component';
+
 const routes: Routes = [
 { path: '', component:LoginComponent },
 { path: 'login', component:LoginComponent },
@@ -41,6 +45,10 @@ const routes: Routes = [
 { path: 'queueTable' ,component:QueueTableComponent },
 {path:'appointment', component:AppointmentComponent},
 {path:'print', component:PrintComponent},
+{ path: 'comment', component: CommentComponent },
+{ path: 'editornext',      component: EditornextComponent },
+{ path: 'last',      component: LastComponent },
+
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

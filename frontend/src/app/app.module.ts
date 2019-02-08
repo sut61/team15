@@ -19,6 +19,7 @@ import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {MatCheckboxModule} from '@angular/material';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 
 import {Controller} from './controller/controller';
 import { MenuComponent } from './menu/menu.component';
@@ -35,6 +36,10 @@ import { RegistercusComponent } from './registercus/registercus.component';
 import { LastpageComponent } from './lastpage/lastpage.component';
 
 import { FileworkComponent } from './filework/filework.component';
+
+import { CommentComponent } from './comment/comment.component';
+import { EditornextComponent } from './editornext/editornext.component';
+import { LastComponent } from './last/last.component';
 
 import { PrintService } from './Model/PrintService';
 import { PrintComponent } from './print/print.component';
@@ -58,6 +63,9 @@ const appRoutes: Routes = [
 { path: 'queueTable' ,component:QueueTableComponent },
 { path: 'appointment' ,component:AppointmentComponent },
 { path: 'print' ,component:PrintComponent },
+{ path: 'comment',component: CommentComponent },
+{ path: 'editornext',component: EditornextComponent },
+{ path: 'last',component: LastComponent },
 ];
 
 @NgModule({
@@ -78,6 +86,9 @@ const appRoutes: Routes = [
     QueueTableComponent,
     AppointmentComponent,
     PrintComponent,
+    CommentComponent,
+    EditornextComponent,
+    LastComponent,
   ],
   imports: [
     BrowserModule,
@@ -104,6 +115,7 @@ const appRoutes: Routes = [
     MatAutocompleteModule,
     ReactiveFormsModule,
     HttpModule,
+    MatIconModule,
   ],
   providers: [Controller,PrintService],
   bootstrap: [AppComponent]

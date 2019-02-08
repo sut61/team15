@@ -1,0 +1,51 @@
+<body background= "https://gurkhacab.com/wp-content/uploads/2018/02/Taxi-in-Camberley.jpeg" bgproperties="fixed">
+<br><div>
+  <h1>
+    <a style="color:black;"><font size="6">โปรดตรวจสอบและยืนยันความถูกต้อง</font></a>
+    <table mat-table [dataSource]="dataSource"  class="mat-elevation-z8">
+
+      <!-- No Column -->
+      <ng-container matColumnDef="No">
+        <th mat-header-cell *matHeaderCellDef> No </th>
+        <td mat-cell *matCellDef="let element"> {{element.com_ID}} </td>
+        <td mat-footer-cell *matFooterCellDef> TotalPrice </td>
+      </ng-container>
+
+
+      <!-- Customer Column -->
+      <ng-container matColumnDef="Customer">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.customer.firstname}} {{element.customer.lastname}}</td>
+      </ng-container>
+
+      <!-- Customer Column -->
+      <ng-container matColumnDef="Docter">
+        <th mat-header-cell *matHeaderCellDef> Docter </th>
+        <td mat-cell *matCellDef="let element"> {{element.denname.firstname}} {{element.denname.lastname}}</td>
+      </ng-container>
+
+      <!-- Customer Column -->
+      <ng-container matColumnDef="Content">
+        <th mat-header-cell *matHeaderCellDef> Comment </th>
+        <td mat-cell *matCellDef="let element"> {{element.comment}} </td>
+      </ng-container>
+
+      <!-- Customer Column -->
+      <ng-container matColumnDef="Point">
+        <th mat-header-cell *matHeaderCellDef> Point </th>
+        <td mat-cell *matCellDef="let element"> {{element.point.point}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </h1>
+</div><br><br><br>
+
+
+<div class="button-1">
+  <button mat-raised-button [routerLink]="['/last']" >ยืนยัน</button>
+  <button mat-raised-button [routerLink]="['/comment']" >กลับ</button>
+</div>
+
+</body>

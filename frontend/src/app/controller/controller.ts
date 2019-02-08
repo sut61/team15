@@ -74,5 +74,21 @@ constructor(
             Appointment(cusName:String,DentName:String,type:String,d:Date): Observable<any>{
             return this.httpClient.get(this.API+"/Appointment/"+d+"/"+cusName+"/"+DentName+"/"+type);
             }
+            // Sprint 2 Comment
+            getCustomer(): Observable<any> {
+                  return this.httpClient.get(this.API + '/Customer');
+                  }
+                getDentis(): Observable<any> {
+                  return this.httpClient.get(this.API + '/Dentisdata');
+                  }
+                getPoint(): Observable<any> {
+                  return this.httpClient.get(this.API + '/Point');
+                  }
+                getComment(): Observable<any> {
+                  return this.httpClient.get(this.API + '/Comment');
+                  }
+                  getAllcontent(): Observable<any> {
+                  return this.httpClient.get(this.API + '/Comment');
+                                       }
 
 }
