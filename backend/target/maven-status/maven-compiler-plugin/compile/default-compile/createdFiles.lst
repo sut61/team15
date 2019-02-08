@@ -5,9 +5,11 @@ com\example\lab\Controller\ReferringFormController.class
 com\example\lab\Entity\Title.class
 com\example\lab\Entity\Payment.class
 com\example\lab\Repository\ReferringFormRepository.class
+com\example\lab\Repository\ApackageRepository.class
 com\example\lab\Entity\Usertype.class
 com\example\lab\Repository\PointRepository.class
 com\example\lab\Controller\UserController.class
+com\example\lab\Repository\FormmedRepository.class
 com\example\lab\Entity\User.class
 com\example\lab\Repository\UserRepository.class
 com\example\lab\Repository\GenderRepository.class
@@ -44,6 +46,8 @@ com\example\lab\Entity\Appointment.class
 com\example\lab\Entity\Formmed.class
 com\example\lab\Repository\ProvinceRepository.class
 com\example\lab\Controller\ReserveController.class
+com\example\lab\Repository\StockmedRepository.class
 com\example\lab\Repository\CustomerRepository.class
 com\example\lab\Repository\HospitalRepository.class
 com\example\lab\Entity\BloodGroup.class
+com\example\lab\Repository\DrugtypeRepository.class
