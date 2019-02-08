@@ -11,6 +11,7 @@ com\example\lab\Repository\AppointmentRepository.class
 com\example\lab\Entity\Title.class
 com\example\lab\Controller\CustomerController.class
 com\example\lab\Entity\Payment.class
+com\example\lab\Entity\Casehis.class
 com\example\lab\Repository\PaymentRepository.class
 com\example\lab\Repository\QueueRepository.class
 com\example\lab\Entity\Usertype.class
@@ -22,6 +23,7 @@ com\example\lab\Repository\ProvinceRepository.class
 com\example\lab\Repository\GenderRepository.class
 com\example\lab\Controller\ReserveController.class
 com\example\lab\Repository\RoomRepository.class
+com\example\lab\Entity\History.class
 com\example\lab\Entity\Room.class
 com\example\lab\Repository\TitleRepository.class
 com\example\lab\Controller\AppointmentController.class
