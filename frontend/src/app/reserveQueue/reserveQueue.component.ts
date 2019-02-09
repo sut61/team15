@@ -72,12 +72,12 @@ idReserveInput: Array<any>;
         .subscribe(
              data => {
                  console.log('PUT Request is successful', data);
-                 alert('SUCCESS');
+                 alert('บันทึกสำเร็จ');
 
              },
              error => {
                   console.log('Error', error);
-                  alert('ERROR');
+                  alert('กรอกข้อมูลผิดพลาด');
             }
     );
     }

@@ -91,11 +91,11 @@ constructor(private controller:Controller,private httpClient: HttpClient) { }
         .subscribe(
              data => {
                  console.log('PUT Request is successful', data);
-                 alert('successful');
+                 alert('บันทึกข้อมูลพนักงานสำเร็จ');
              },
              error => {
                   console.log('Error', error);
-                   alert('error');
+                   alert('ข้อมูลผิดพลาด');
 
             }
     );

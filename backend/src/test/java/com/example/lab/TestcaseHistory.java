@@ -44,9 +44,9 @@ public class TestcaseHistory {
     public void setup() {
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         validator = factory.getValidator();
-        customer = customerRepository.findByfirstname("อนุพงษ์");
+        customer = customerRepository.findByfirstname("คำเหลา");
         type = typeRepository.findBynameType("อุดฟัน");
-        dentistData = dentistDataRepository.findByfirstname("ทวี");
+        dentistData = dentistDataRepository.findByfirstname("หมออาร์ต");
         casehis = casehisRepository.findBycasehis("ปกติ");
     }
     @Test

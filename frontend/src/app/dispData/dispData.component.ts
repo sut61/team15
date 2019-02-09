@@ -90,11 +90,11 @@ export class DispDataComponent implements OnInit {
         .subscribe(
              data => {
                  console.log('PUT Request is successful', data);
-                 alert('Success');
+                 alert('บันทึกข้อมูลสำเร็จ');
              },
              error => {
                   console.log('Error', error);
-                  alert('Error');
+                  alert('ข้อมูลผิดพลาด โปรดตรวจสอบข้อมูล');
             }
     );
     }
