@@ -64,11 +64,13 @@ public class ReserveController {
     }
 
 
-    @PostMapping(path ="/reserve/{customerNameSelect}/{roomNumberSelect}/{queueNumberSelect}")
+    @PostMapping(path ="/reserve/{customerNameSelect}/{roomNumberSelect}/{queueNumberSelect}/{phonecusInput}/{idReserveInput}")
     public Reserve newReserve(@RequestBody Reserve reserve ,
                               @PathVariable String customerNameSelect,
                               @PathVariable String roomNumberSelect,
-                              @PathVariable String queueNumberSelect) {
+                              @PathVariable String queueNumberSelect,
+                              @PathVariable String phonecusInput,
+                              @PathVariable String idReserveInput) {
         Reserve r = new Reserve();
 
         Customer customer = customerRepository.findByfirstname(customerNameSelect);
@@ -83,6 +85,8 @@ public class ReserveController {
         r.setCustomer(customer);
         r.setRoom(room);
         r.setQueue(queue);
+        r.setPhonecus(phonecusInput);
+        r.setIdreserve(idReserveInput);
         return reserveRepository.save(r);
 
     }

@@ -6,5 +6,6 @@ import com.example.lab.Entity.Reserve;
 
 @RepositoryRestResource
 public interface ReserveRepository extends JpaRepository<Reserve, Long> {
-    //Reserve findByreserveConfirm(boolean reserveConfirm);
+    Reserve findByphonecus(String phonecus);
+    Reserve findByidreserve(String idreserve);
 }
