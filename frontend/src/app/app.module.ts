@@ -61,6 +61,9 @@ import { ShowService } from './Model/ShowsService';
 import {HistoryComponent} from './history/history.component';
 import { ShowhistoryComponent } from './showhistory/showhistory.component';
 
+import { MedicalComponent } from './medical/medical.component';
+import { LeaveComponent } from './leave/leave.component';
+
 const appRoutes: Routes = [
 { path: 'login', component:LoginComponent },
 { path: 'register',component: RegisterComponent },
@@ -87,6 +90,8 @@ const appRoutes: Routes = [
 {path:'show',component:ShowComponent},
 { path: 'history', component: HistoryComponent },
 { path: 'showhistory', component: ShowhistoryComponent },
+{ path: 'medical',component:MedicalComponent },
+{ path: 'leave', component: LeaveComponent },
 
 
 ];
@@ -120,6 +125,8 @@ const appRoutes: Routes = [
     ShowComponent,
     HistoryComponent,
     ShowhistoryComponent,
+    MedicalComponent,
+    LeaveComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,80 @@
+<body style="background-color : #FFCCCC ">
+
+<div class="container">
+  <div style="text-align:center;" class="card card-container">
+    <form action="/action_page.php">
+      <table align="center" width="430">
+        <h1>
+          <a style="color:black;">กรอกข้อมูลทันตแพทย์</a>
+        </h1>
+
+        <mat-form-field appearance="outline">
+          <mat-label>listorder</mat-label>
+          <input matInput placeholder="list order" [(ngModel)]="views.listorderInput" name="listorder" >
+        </mat-form-field>
+
+        <br>
+
+
+        <mat-form-field appearance="outline">
+          <mat-select placeholder="Customer" [(ngModel)]="views.customerNameSelect" name="firstname" >
+            <mat-option *ngFor="let firstname of customer" [value]="firstname.firstname">
+              {{firstname.firstname}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <br>
+
+        <mat-form-field appearance="outline">
+          <mat-select placeholder="Dentist" [(ngModel)]="views.dentistDataSelect" name="firstname" >
+            <mat-option *ngFor="let firstname of dentist" [value]="firstname.firstname">
+              {{firstname.firstname}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <br>
+
+        <mat-form-field appearance="outline">
+          <mat-select placeholder="Treatment" [(ngModel)]="views.treatmentSelect" name="treatment" >
+            <mat-option *ngFor="let treatment of treatment" [value]="treatment.treatment">
+              {{treatment.treatment}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <br>
+
+
+
+        <mat-form-field appearance="outline">
+          <mat-select placeholder="type" [(ngModel)]="views.typeSelect" name="nameType" >
+            <mat-option *ngFor="let type of type" [value]="type.nameType">
+              {{type.nameType}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        &nbsp;&nbsp;&nbsp;  <button mat-flat-button (click)="save_func()"  >ยืนยันการลงทะเบียน</button>
+        <br>
+        <mat-form-field appearance="outline">
+          <mat-label>Comment</mat-label>
+          <input matInput placeholder="Comment" [(ngModel)]="views.commentInput" name="comment">
+        </mat-form-field>
+
+
+        &nbsp;&nbsp;&nbsp;  <button mat-flat-button routerLink='/leave' routerLinkActive='active'> ถัดไป </button>
+        <br>
+
+
+
+
+        <br>
+      </table>
+    </form>
+
+  </div>
+</div>
+</body>
+

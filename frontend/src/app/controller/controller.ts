@@ -144,4 +144,17 @@ constructor(
       return this.httpClient.get(this.API + '/History');
       }
 
+      gettreatment(): Observable<any> {
+      return this.httpClient.get(this.API + '/Treatmentrights');
+      }
+      getAllmedical(): Observable<any>{
+      return this.httpClient.get(this.API+'/Medicaltificate');
+      }
+      gettype(): Observable<any> {
+      return this.httpClient.get(this.API + '/Type');
+      }
+      getdentist(): Observable<any>{
+      return this.httpClient.get(this.API+'/DentistData');
+      }
+
 }
