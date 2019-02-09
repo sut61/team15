@@ -20,7 +20,7 @@ distance:number;
 })
 export class ReciptComponent implements OnInit {
 AllRecipt: Array<any>;
-  displayedColumns: string[] = ['No', 'CustomerName', 'DriverName', 'DatePay', 'PayMent', 'Type'];
+  displayedColumns: string[] = ['No', 'CustomerName', 'DriverName', 'DatePay', 'PayMent', 'Type','Number'];
   dataSource = new HistoryDataSource(this.controller);
 
  constructor(private controller:Controller) { }

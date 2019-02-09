@@ -48,12 +48,13 @@ public class PaymentController {
     public Collection<Payment> payments() {
         return paymentRepository.findAll().stream().collect(Collectors.toList());
     }
-    @PostMapping("/Payment/{fristNameSelect}/{doctorNameSelect}/{payMentInput}/{typeSelect}")
+    @PostMapping("/Payment/{fristNameSelect}/{doctorNameSelect}/{payMentInput}/{typeSelect}/{phoneInput}")
     public Payment recipt(@RequestBody Payment payment,
                           @PathVariable String fristNameSelect,
                           @PathVariable String doctorNameSelect,
                           @PathVariable String typeSelect,
-                          @PathVariable int payMentInput
+                          @PathVariable int payMentInput,
+                          @PathVariable String phoneInput
                           ){
         DateFormat sdf = new SimpleDateFormat("HH:mm:ss dd/MM/yyyy");
         Date date = new Date();
@@ -73,6 +74,7 @@ public class PaymentController {
         p.setDenname(dentistdata);
         p.setNameType(t);
         p.setDatePay(new Date());
+        p.setPhoneNumber(phoneInput);
         p.setPayMent(payMentInput);
 
         return  paymentRepository.save(p);
