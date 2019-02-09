@@ -3,6 +3,9 @@ package com.example.lab.Entity;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 @Entity
@@ -18,7 +21,12 @@ public class Appointment {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "appointment_seq")
     @Column(name = "APPOINTMENT_ID", unique = true, nullable = true)
     private @NonNull Long appointmetnId;
+    @NotNull
     private Date date;
+    @NotNull
+    @Size(min=10,max = 10)
+    @Pattern(regexp = "^0[689]+[0-9]+")
+    private String tel;
 
     @ManyToOne
     @JoinColumn(name = "typeId")
