@@ -91,9 +91,11 @@ constructor(private controller:Controller,private httpClient: HttpClient) { }
         .subscribe(
              data => {
                  console.log('PUT Request is successful', data);
+                 alert('successful');
              },
              error => {
                   console.log('Error', error);
+                   alert('error');
 
             }
     );
