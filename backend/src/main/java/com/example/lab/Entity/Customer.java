@@ -4,17 +4,15 @@ package com.example.lab.Entity;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
-import javax.persistence.SequenceGenerator;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
 @Entity
 @Data
-@Getter @Setter
+@Getter
+@Setter
 @NoArgsConstructor
 @ToString
 @EqualsAndHashCode
@@ -25,9 +23,14 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "customer_seq")
     @Column(name = "customerId" , unique = true, nullable = true)
     private @NonNull Long customerId;
+    @NotNull
     private  String firstname;
+    @NotNull
     private  String lastname;
+    @NotNull
+    @Pattern(regexp = "^[1-9]{2}[0-9]{11}$")
     private  String idcard;
+
     @ManyToOne
     @JoinColumn(name = "genderId")
     private Gender gender;
@@ -37,7 +40,7 @@ public class Customer {
     private Province province;
 
     @ManyToOne
-    @JoinColumn(name = "typeId")
+    @JoinColumn(name = "titleId")
     private Type type;
 
     public String getFirstname() {
@@ -85,4 +88,3 @@ public class Customer {
     public void setIdcard(String idcard) { this.idcard = idcard; }
 
 }
-

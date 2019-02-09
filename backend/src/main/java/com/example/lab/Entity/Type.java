@@ -3,6 +3,7 @@ package com.example.lab.Entity;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Data
 @Entity
@@ -18,6 +19,7 @@ public class Type {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "type_seq")
     @Column(name = "TYPE_ID",unique = true, nullable = true)
     private @NonNull Long typeId;
+    @NotNull
     private  String nameType;
 
     public String getName() {
