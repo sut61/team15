@@ -46,7 +46,7 @@ public class ReserveTest {
     public void setup() {
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         validator = factory.getValidator();
-        customer = customerRepository.findByfirstname("อนุพงษ์");
+        customer = customerRepository.findByfirstname("Arttis");
         queue = queueRepository.findByqueueNumber("C22");
         room = roomRepository.findByroomNumber("103");
     }
