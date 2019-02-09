@@ -151,7 +151,7 @@ public class LabApplication {
 					customerRepository.save(c);
 
 			});
-			Stream.of("หมออาร์ต","ทวี","ta").forEach(dentisname->{
+			Stream.of("หมออาร์ต").forEach(dentisname->{
 
 
 					DentistData d = new DentistData();
