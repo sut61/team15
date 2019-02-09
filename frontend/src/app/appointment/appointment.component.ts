@@ -113,9 +113,9 @@ export class AppointmentComponent implements OnInit {
     alert('Success!!');
     {
       this.controller.Appointment(this.namecus,this.namedent,this.typename,this.date,this.tel).subscribe(data =>{
-        this.App.namecus = data.customer.firstName+" "+data.customer.lastName;
+        this.App.namecus = data.customer.firstname+" "+data.customer.lastname;
         console.log(data);
-        this.App.namedent = data.dentistData.firstname1+" "+data.dentistData.lastname1;
+        this.App.namedent = data.dentistData.firstname+" "+data.dentistData.lastname;
         this.App.typename = data.type.nameType;
         this.App.date = data.date;
         this.App.tel = data.tel;
