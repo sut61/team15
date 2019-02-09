@@ -24,11 +24,11 @@ public class Medicaltificate {
     @Column(name = "medicaltificateId" , unique = true, nullable = true)
     private @NonNull Long medicaltificateId;
     @NotNull
-    @Size(min = 1 , max = 9 )
-    @Pattern(regexp = "([ก-ู]|[เ-์])+")
+    @Pattern(regexp = "[1-9]{2}[0-9]{8}$")
     private String listorder;
     @NotNull
     @Size(min = 5 , max = 20 )
+    @Pattern(regexp = "([ก-ู]|[เ-์])+")
     private String comment;
     private Date dendate;
 

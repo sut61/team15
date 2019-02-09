@@ -22,7 +22,7 @@ public class History {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "history_seq")
     @Column(name = "historyId" , unique = true, nullable = true)
     private @NonNull Long historyId;
-    @NonNull
+    @NotNull
     private Date hisdate;
 
     @NotNull(message = " name Note must not be null to be valid")

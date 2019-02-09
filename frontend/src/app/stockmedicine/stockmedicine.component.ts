@@ -82,11 +82,11 @@ export class StockmedicineComponent implements OnInit {
         .subscribe(
              data => {
                  console.log('PUT is successful', data);
-                 alert('successful');
+                 alert('บันทึกข้อมูลยาสำเร็จ!!');
              },
              error => {
                   console.log('Error', error);
-                  alert('error');
+                  alert('ข้อมูลผิดพลาดไม่สมบูรณ์');
             }
     );
   }

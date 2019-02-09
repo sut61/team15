@@ -8,7 +8,6 @@
   <div style="text-align:center;">
     <form action="/action_page.php">
       <table align="center" width="430">
-        <br>
         <mat-form-field appearance="outline">
           <mat-label>First-name</mat-label>
           <input matInput placeholder="Firstname" [(ngModel)]="views.firstnameInput" name="firstname" >
@@ -48,10 +47,9 @@
             </mat-option>
           </mat-select>
         </mat-form-field>
-        <br>
+
       </table>
     </form>
-
     <button mat-flat-button color="yellow" (click)="save_func()" >บันทึก</button>
     &nbsp;
     <button mat-flat-button color="yellow" [routerLink]="['/lastpage']" >ถัดไป</button>

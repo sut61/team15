@@ -44,6 +44,8 @@ import { ShowhistoryComponent } from './showhistory/showhistory.component';
 import { MedicalComponent } from './medical/medical.component';
 import { LeaveComponent } from './leave/leave.component';
 
+import {ReturnComponent } from './return/return.component';
+
 const routes: Routes = [
 { path: '', component:LoginComponent },
 { path: 'login', component:LoginComponent },
@@ -73,6 +75,7 @@ const routes: Routes = [
 { path: 'showhistory', component: ShowhistoryComponent },
 { path: 'medical',component: MedicalComponent },
 { path: 'leave', component:LeaveComponent },
+{ path: 'return', component:ReturnComponent },
 
 ];
 @NgModule({

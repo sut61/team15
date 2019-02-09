@@ -281,10 +281,10 @@ public class LabApplication {
 
 			h.setHisdate(new Date());
 
-			Customer customer1 = customerRepository.findByfirstname("อนุพงษ์");
+			Customer customer1 = customerRepository.findByfirstname("คำเหลา");
 			h.setCustomer(customer1);
 
-			DentistData dentistData1 = dentistDataRepository.findByfirstname("ทวี");
+			DentistData dentistData1 = dentistDataRepository.findByfirstname("หมออาร์ต");
 			h.setDentistData(dentistData1);
 
 			Casehis casehis = casehisRepository.findBycasehis("ปกติ");
@@ -296,25 +296,8 @@ public class LabApplication {
 			historyRepository.save(h);
 			historyRepository.findAll().forEach(System.out::println);
 
-			//b5803569
-			Medicaltificate me = new Medicaltificate();
-			me.setListorder("กก");
-			me.setComment("บริการดีมาก");
 
-			DentistData dentistData2 = dentistDataRepository.findByfirstname("ta");
-			me.setDentistData(dentistData2);
 
-			Customer customer2 = customerRepository.findByfirstname("new");
-			me.setCustomer(customer2);
-			me.setDendate(new Date());
-			Type type2 = typeRepository.findBynameType("อุดฟัน");
-			me.setType(type2);
-
-			Treatmentrights treatmentrights = treatmentrightsRepository.findBytreatment("ไม่มี");
-			me.setTreatmentrights(treatmentrights);
-
-			medicaltificateRepository.save(me);
-			medicaltificateRepository.findAll().forEach(System.out::println);
 
 
 

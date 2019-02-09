@@ -78,9 +78,11 @@ constructor(private controller:Controller,private httpClient: HttpClient) { }
         .subscribe(
              data => {
                  console.log('PUT Request is successful', data);
+                 alert('บันทึกสำเร็จ');
              },
              error => {
                   console.log('Error', error);
+                  alert('กรุณาตรวจสอบข้อมูลอีกครั้ง');
 
             }
     );

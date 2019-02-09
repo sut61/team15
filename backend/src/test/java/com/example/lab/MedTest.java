@@ -46,9 +46,9 @@ public class MedTest {
     public void setup() {
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         validator = factory.getValidator();
-        customer = customerRepository.findByfirstname("new");
+        customer = customerRepository.findByfirstname("Arttis");
         type = typeRepository.findBynameType("อุดฟัน");
-        dentistData = dentistDataRepository.findByfirstname("ta");
+        dentistData = dentistDataRepository.findByfirstname("หมออาร์ต");
         treatmentrights = treatmentrightsRepository.findBytreatment("ไม่มี");
 
     }

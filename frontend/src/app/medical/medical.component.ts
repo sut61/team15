@@ -72,17 +72,17 @@ constructor(private controller:Controller,private httpClient: HttpClient) { }
     }
 }
     save_func(){
-      alert('บันทึกสำเร็จ');
     this.httpClient.post('http://localhost:8080/medicaltificate/' + this.views.listorderInput + '/' + this.views.customerNameSelect
                         + '/' + this.views.dentistDataSelect + '/' + this.views.treatmentSelect + '/'
                         + this.views.typeSelect + '/' + this.views.commentInput,this.views)
         .subscribe(
              data => {
                  console.log('PUT Request is successful', data);
+                  alert('บันทึกสำเร็จ');
              },
              error => {
                   console.log('Error', error);
-                    alert('error');
+                    alert('กรุณาตรวจสอบข้อมูลอีกครั้ง');
             }
     );
     }
