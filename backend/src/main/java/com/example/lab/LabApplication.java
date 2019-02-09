@@ -157,6 +157,7 @@ public class LabApplication {
 					DentistData d = new DentistData();
 					d.setFirstname(dentisname);
 					d.setLastname("สุดหล่อ");
+					d.setNumber("1111111111");
 					dentistDataRepository.save(d);
 
 			});

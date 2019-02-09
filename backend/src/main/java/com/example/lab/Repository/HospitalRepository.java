@@ -1,8 +1,8 @@
 package com.example.lab.Repository;
 
+import com.example.lab.Entity.Hospital;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
-import com.example.lab.Entity.Hospital;
 
 @RepositoryRestResource
 public

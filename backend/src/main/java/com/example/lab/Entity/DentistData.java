@@ -3,6 +3,8 @@ package com.example.lab.Entity;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @Data
@@ -19,8 +21,13 @@ public class DentistData {
     @Column(name = "dentistDataId" , unique = true, nullable = true)
 
     private @NonNull Long dentistDataId;
+
+    @NotNull
     private  String firstname;
+    @NotNull
     private  String lastname;
+    @NotNull
+    @Pattern(regexp = "^[1-9]{2}[0-9]{8}$")
     private  String number;
 
 

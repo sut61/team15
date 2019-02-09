@@ -1,6 +1,7 @@
 package com.example.lab.Controller;
 
 import com.example.lab.Entity.Customer;
+import com.example.lab.Entity.DentistData;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -8,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import com.example.lab.Entity.Appointment;
-import com.example.lab.Entity.DentistData;
 import com.example.lab.Entity.Type;
 import com.example.lab.Repository.AppointmentRepository;
 import com.example.lab.Repository.CustomerRepository;
