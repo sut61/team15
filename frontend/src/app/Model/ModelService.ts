@@ -18,6 +18,7 @@ export class Appointment{
     public namedent:String;
     public typename:String;
     public date:Date;
+    public tel:String;
 }
 export class namegroup{
     public ID:String;

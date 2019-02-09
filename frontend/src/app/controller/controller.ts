@@ -71,8 +71,8 @@ constructor(
             CustomerDent(): Observable<any>{
             return this.httpClient.get(this.API+'/CustomerDent');
             }
-            Appointment(cusName:String,DentName:String,type:String,d:Date): Observable<any>{
-            return this.httpClient.get(this.API+"/Appointment/"+d+"/"+cusName+"/"+DentName+"/"+type);
+            Appointment(cusName:String,DentName:String,type:String,d:Date,tel:String): Observable<any>{
+            return this.httpClient.get(this.API+"/Appointment/"+d+"/"+cusName+"/"+DentName+"/"+type+"/"+tel);
             }
             // Sprint 2 Comment
             getCustomer(): Observable<any> {

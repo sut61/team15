@@ -28,6 +28,7 @@ export class AppointmentComponent implements OnInit {
   namecus:String;
   namedent:String;
   typename:String;
+  tel:String;
 
   constructor(private controller: Controller, private p:PrintService) {
     this.App = p.App;
@@ -86,18 +87,43 @@ export class AppointmentComponent implements OnInit {
     return options.filter(option => option.toLowerCase().includes(filterValue));
   }
   Save() {
+    if (this.namecus == null) {
+      alert('No Customer!!');
+    }
+    else if (this.namedent == null) {
+      alert('No Doctor!! ');
+    }
+    else if (this.typename == null) {
+      alert('No type!!');
+    }
+    else if(this.date == null){
+      alert('No BirthDay!!');
+    }
+    else if(this.tel == null){
+      alert('No PhoneNumber!!');
+    }
+    else {
+      this.save_func();
+    }
+
+
+  }
+  save_func(){
     if(this.namecus!=""||this.namecus!=undefined)
+    alert('Success!!');
     {
-      this.controller.Appointment(this.namecus,this.namedent,this.typename,this.date).subscribe(data =>{
-        this.App.namecus = data.customer.firstname+" "+data.customer.lastname;
+      this.controller.Appointment(this.namecus,this.namedent,this.typename,this.date,this.tel).subscribe(data =>{
+        this.App.namecus = data.customer.firstName+" "+data.customer.lastName;
         console.log(data);
-        this.App.namedent = data.dentistData.firstname+" "+data.dentistData.lastname;
+        this.App.namedent = data.dentistData.firstname1+" "+data.dentistData.lastname1;
         this.App.typename = data.type.nameType;
         this.App.date = data.date;
-  
+        this.App.tel = data.tel;
+
       });
     }
-    
+
   }
+
 
 }
