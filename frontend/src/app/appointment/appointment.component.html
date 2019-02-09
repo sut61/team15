@@ -2,7 +2,7 @@
   <br><br>
 
   <div style="text-align:center;" class="card card-container">
-    
+
 
     <div class="row">
       <div class="col-md-12">
@@ -49,12 +49,19 @@
           <mat-datepicker touchUi #picker></mat-datepicker>
         </mat-form-field>
       </div>
+      <form class="example-form">
+        <div class="col-md-6"></div>
+        <mat-form-field class="example-full-width">
+          <span matPrefix>+66 &nbsp;</span>
+          <input type="tel" matInput placeholder="Telephone" [(ngModel)]="tel" name="tel">
+        </mat-form-field>
+      </form>
     </div>
 
     <div class="row">
       <div class="col-md-5 form-inline">
-        <button mat-raised-button class="button-margin" (click)="Save()" color="primary" routerLink='/print'>ยืนยัน</button>
-        <button mat-raised-button color="warn" routerLink='/menu'>ยกเลิก</button>
+        <button mat-raised-button class="button-margin" (click)="Save()" color="primary">ยืนยัน</button>
+        <button mat-raised-button color="warn" routerLink='/print'>แสดงใบนัด</button>
       </div>
     </div>
 
