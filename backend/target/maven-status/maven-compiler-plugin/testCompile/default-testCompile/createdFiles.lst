@@ -1,12 +1,13 @@
 com\example\lab\TestUser.class
 com\example\lab\TestComment.class
+com\example\lab\AppointmentTest.class
+com\example\lab\DenTest.class
+com\example\lab\PaymentTest.class
+com\example\lab\TestcaseHistory.class
 com\example\lab\TestStockmed.class
 com\example\lab\DispenseTest.class
 com\example\lab\TestcaseCustomer.class
 com\example\lab\LabApplicationTests.class
-com\example\lab\AppointmentTest.class
-com\example\lab\PaymentTest.class
 com\example\lab\MedTest.class
-com\example\lab\TestcaseHistory.class
 com\example\lab\ReferringTest.class
 com\example\lab\ReserveTest.class
