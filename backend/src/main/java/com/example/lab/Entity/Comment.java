@@ -19,9 +19,9 @@ import javax.validation.constraints.Size;
 public class Comment {
     @Id
     @SequenceGenerator(name="comment_seq",sequenceName="comment_seq")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="payment_seq")
-    @Column(name="com_ID",unique = true, nullable = true)
-    private @NonNull Long com_ID;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="comment_seq")
+    @Column(name="comment_ID",unique = true, nullable = true)
+    private @NonNull Long comment_ID;
     @NotNull(message = " Comment must not be null to be valid")
     @Size(min = 5,max =20)
     @Pattern(regexp = "^([ก-ู]|[เ-์])+",message="Invalid Comment")
