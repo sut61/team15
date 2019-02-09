@@ -1,6 +1,5 @@
 package com.example.lab.Entity;
 
-
 import lombok.*;
 
 import javax.persistence.*;
@@ -28,6 +27,7 @@ public class Customer {
     @NotNull
     private  String lastname;
     @NotNull
+    @Size(max = 13,min = 13)
     @Pattern(regexp = "^[1-9]{2}[0-9]{11}$")
     private  String idcard;
 
@@ -87,4 +87,11 @@ public class Customer {
 
     public void setIdcard(String idcard) { this.idcard = idcard; }
 
+    public Long getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(Long customerId) {
+        this.customerId = customerId;
+    }
 }

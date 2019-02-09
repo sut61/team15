@@ -51,4 +51,12 @@ public class Appointment {
 
     public DentistData getDentistData(){return dentistData;}
     public void setDentistData(DentistData dentistData){this.dentistData = dentistData;}
+
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
 }
