@@ -87,11 +87,13 @@ public class AppointmentController {
         return a.toString();
     }
 
-    @GetMapping(path = "/Appointment/{dateInput}/{customerNameSelect}/{dentistNameSelect}/{typeSelect}")
+    @GetMapping(path = "/Appointment/{dateInput}/{customerNameSelect}/{dentistNameSelect}/{typeSelect}/{telInput}")
     public Appointment newAppointment( @PathVariable Date dateInput,
                                       @PathVariable String customerNameSelect,
                                        @PathVariable String dentistNameSelect,
-                                      @PathVariable String typeSelect){
+                                      @PathVariable String typeSelect,
+                                       @PathVariable String telInput
+    ){
         Appointment a = new Appointment();
         customerNameSelect += " tmp";
         String[] lCusName = customerNameSelect.split(" ");
@@ -110,6 +112,7 @@ public class AppointmentController {
         a.setType(type);
         a.setCustomer(customer);
         a.setDentistData(dentistData);
+        a.setTel(telInput);
         return appointmentRepository.save(a);
     }
     @DeleteMapping(path = "Appointment/{appointmentId}")
