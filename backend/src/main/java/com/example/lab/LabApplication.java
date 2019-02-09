@@ -147,10 +147,13 @@ public class LabApplication {
 					Customer c = new Customer();
 					c.setFirstname(username);
 					c.setLastname("khamamprai");
+					c.setIdcard("1234567893256");
 					customerRepository.save(c);
 
 			});
 			Stream.of("หมออาร์ต","ทวี","ta").forEach(dentisname->{
+
+
 					DentistData d = new DentistData();
 					d.setFirstname(dentisname);
 					d.setLastname("สุดหล่อ");
@@ -241,9 +244,11 @@ public class LabApplication {
 				instructionRepository.save(a);
 			});
 
-			Stream.of("คำเหลา","อนุพงษ์","new").forEach(customer -> {
+			Stream.of("คำเหลา").forEach(customer -> {
 				Customer m = new Customer();
 				m.setFirstname(customer);
+				m.setLastname("สัส");
+				m.setIdcard("1234567891234");
 				customerRepository.save(m);
 			});
 
@@ -310,22 +315,8 @@ public class LabApplication {
 			medicaltificateRepository.save(me);
 			medicaltificateRepository.findAll().forEach(System.out::println);
 
-			Reserve rs = new Reserve();
-			rs.setPhonecus("0872545770");
-			rs.setIdreserve("R5814909");
-
-			Customer customer3 = customerRepository.findByfirstname("new");
-			rs.setCustomer(customer3);
 
 
-			Room room = roomRepository.findByroomNumber("101");
-			rs.setRoom(room);
-
-
-			Queue queue = queueRepository.findByqueueNumber("C04");
-			rs.setQueue(queue);
-
-			reserveRepository.save(rs);
 
 
 		};
