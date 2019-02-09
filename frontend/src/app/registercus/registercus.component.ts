@@ -14,7 +14,7 @@ export class RegistercusComponent implements OnInit {
    gender: Array<any>;
    genderNameSelect='';
 
-   nametype: Array<any>;
+   type: Array<any>;
    nameTypeSelect='';
 
   firstnameInput: Array<any>;
@@ -46,39 +46,43 @@ constructor(private controller:Controller,private httpClient: HttpClient) { }
             this.gender = data;
             console.log(this.gender);
           });
-
-  this.controller.getnametype().subscribe(data => {
-            this.nametype = data;
-            console.log(this.nametype);
+  this.controller.gettype().subscribe(data => {
+            this.type = data;
+            console.log(this.type);
           });
+
   }
   save() {
 
       if(this.views.firstnameInput==null){
-        alert('No found');
+        alert('firstname null');
       }else if(this.views.lastnameInput==null){
-        alert('No found');
-      }else if(this.views.ageInput==null){
-        alert('No found');
+        alert('lastname null');
+      }else if(this.views.idcardInput==null){
+        alert('lastname null');
       }else if(this.views.genderNameSelect==null){
         alert('No found');
       }else if(this.views.provinceNameSelect==null){
+        alert('No found');
+      }else if(this.views.nameTypeSelect==null){
         alert('No found');
       }else{
       this.save_func();
     }
 }
     save_func(){
+
     this.httpClient.post('http://localhost:8080/customer/'+ this.views.firstnameInput +
     '/' +this.views.lastnameInput + '/' +this.views.idcardInput+ '/' +this.views.genderNameSelect+ '/'
      +this.views.provinceNameSelect+ '/' +this.views.nameTypeSelect,this.views)
         .subscribe(
              data => {
                  console.log('PUT Request is successful', data);
+                  alert('บันทึกสำเร็จ');
              },
              error => {
                   console.log('Error', error);
-
+                  alert('error');
             }
     );
     }

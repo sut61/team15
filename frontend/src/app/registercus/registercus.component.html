@@ -5,54 +5,57 @@
   </h1>
 </div>
 <div style="text-align:center;" class="card card-container">
-<div style="text-align:center;">
-  <form action="/action_page.php">
-    <table align="center" width="430">
-      <br>
-      <mat-form-field appearance="outline">
-        <mat-label>First-name</mat-label>
-        <input matInput placeholder="Firstname" [(ngModel)]="views.firstnameInput" name="firstname" >
-      </mat-form-field>
-      &nbsp;
-      <mat-form-field appearance="outline">
-        <mat-label>Last-name</mat-label>
-        <input matInput placeholder="Lastname"[(ngModel)]="views.lastnameInput" name="lastname">
-      </mat-form-field>
+  <div style="text-align:center;">
+    <form action="/action_page.php">
+      <table align="center" width="430">
+        <br>
+        <mat-form-field appearance="outline">
+          <mat-label>First-name</mat-label>
+          <input matInput placeholder="Firstname" [(ngModel)]="views.firstnameInput" name="firstname" >
+        </mat-form-field>
+        &nbsp;
+        <mat-form-field appearance="outline">
+          <mat-label>Last-name</mat-label>
+          <input matInput placeholder="Lastname"[(ngModel)]="views.lastnameInput" name="lastname">
+        </mat-form-field>
 
-      <mat-form-field class="form-IDcard" appearance="outline">
-        <input matInput placeholder="IDcard"[(ngModel)]="views.idcardInput" name="idcard">
-      </mat-form-field>
-      <br>
+        <mat-form-field class="form-IDcard" appearance="outline">
+          <input matInput placeholder="IDcard"[(ngModel)]="views.idcardInput" name="idcard">
+        </mat-form-field>
+        <br>
 
-      <mat-form-field appearance="outline">
-        <mat-select placeholder="Gender" [(ngModel)]="views.genderNameSelect" name="gender" >
-          <mat-option *ngFor="let gender of gender" [value]="gender.gender">
-            {{gender.gender}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-      <br>
+        <mat-form-field appearance="outline">
+          <mat-select placeholder="Gender" [(ngModel)]="views.genderNameSelect" name="gender" >
+            <mat-option *ngFor="let gender of gender" [value]="gender.gender">
+              {{gender.gender}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
 
-      <mat-form-field appearance="outline">
-        <mat-select placeholder="province" [(ngModel)]="views.provinceNameSelect" name="name" >
-          <mat-option *ngFor="let province of province" [value]="province.name">
-            {{province.name}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-      <br>
-      <mat-form-field appearance="outline">
-        <mat-select placeholder="Type" [(ngModel)]="views.nameTypeSelect" name="nameType" >
-          <mat-option *ngFor="let type of nametype" [value]="type.nameType">
-            {{type.nameType}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-      <br>
-    </table>
-  </form>
-  <button mat-flat-button color = "yellow" (click)="save_func()" [routerLink]="['/lastpage']" >ยันทึกข้อมูล</button>
-</div>
+        <mat-form-field appearance="outline">
+          <mat-select placeholder="province" [(ngModel)]="views.provinceNameSelect" name="name" >
+            <mat-option *ngFor="let province of province" [value]="province.name">
+              {{province.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="outline">
+          <mat-select placeholder="Type" [(ngModel)]="views.nameTypeSelect" name="nameType" >
+            <mat-option *ngFor="let type of type" [value]="type.nameType">
+              {{type.nameType}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+      </table>
+    </form>
+
+    <button mat-flat-button color="yellow" (click)="save_func()" >บันทึก</button>
+    &nbsp;
+    <button mat-flat-button color="yellow" [routerLink]="['/lastpage']" >ถัดไป</button>
+  </div>
 </div>
 </body>
 
