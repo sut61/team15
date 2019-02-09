@@ -49,7 +49,7 @@ this.controller.getnametype().subscribe(data => {
         }
   }
   save_func() {
-        this.httpClient.post('http://localhost:8080/Payment/'+this.views.fristNameSelect + '/' +this.views.doctorNameSelect + '/' + this.views.payMentInput+'/'+this.views.typeSelect, this.views)
+        this.httpClient.post('http://localhost:8080/Payment/'+this.views.fristNameSelect + '/' +this.views.doctorNameSelect + '/' + this.views.payMentInput+'/'+this.views.typeSelect+'/'+this.views.phoneInput, this.views)
         .subscribe(
              data => {
 
@@ -58,6 +58,7 @@ this.controller.getnametype().subscribe(data => {
              },
              error => {
                   console.log('Error', error);
+                  alert('Input Error');
             }
     );
   }
