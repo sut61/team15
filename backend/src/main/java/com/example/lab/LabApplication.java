@@ -127,7 +127,9 @@ public class LabApplication {
 					a.setRoomNumber(room);
 					roomRepository.save(a);
 				});
-					Stream.of("1", "2", "3", "4", "5", "6", "7", "8", "9", "10").forEach(queue -> {
+					Stream.of("C01", "C02", "C03", "C04", "C05", "C06", "C07", "C08", "C09", "C10",
+							"C11", "C12", "C13", "C14", "C15", "C16", "C17", "C18", "C19", "C20",
+							"C21", "C22", "C23", "C24", "C25", "C26", "C27", "C28", "C29", "C30").forEach(queue -> {
 						Queue q = new Queue();
 						q.setQueueNumber(queue);
 						queueRepository.save(q);
@@ -307,6 +309,23 @@ public class LabApplication {
 
 			medicaltificateRepository.save(me);
 			medicaltificateRepository.findAll().forEach(System.out::println);
+
+			Reserve rs = new Reserve();
+			rs.setPhonecus("0872545770");
+			rs.setIdreserve("R5814909");
+
+			Customer customer3 = customerRepository.findByfirstname("new");
+			rs.setCustomer(customer3);
+
+
+			Room room = roomRepository.findByroomNumber("101");
+			rs.setRoom(room);
+
+
+			Queue queue = queueRepository.findByqueueNumber("C04");
+			rs.setQueue(queue);
+
+			reserveRepository.save(rs);
 
 
 		};
