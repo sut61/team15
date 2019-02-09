@@ -16,11 +16,17 @@ export class ReserveQueueComponent implements OnInit {
 
   room: Array<any>;
 
+phonecusInput: Array<any>;
+
+idReserveInput: Array<any>;
+
 
   views: any = {
    customerNameSelect: '',
    roomNumberSelect: '',
-   queueNumberSelect: ''
+   queueNumberSelect: '',
+ phonecusInput: '',
+  idReserveInput: '',
   };
   constructor(private controller:Controller,private httpClient: HttpClient) { }
   ngOnInit() {
@@ -49,21 +55,29 @@ export class ReserveQueueComponent implements OnInit {
       }
       else if(this.views.customerNameSelect==null){
         alert('No found');
-      }else{
+      }
+      else if(this.views.phonecusInput==null){
+        alert('No found');
+      }
+      else if(this.views.idReserveInput==null){
+        alert('No found');
+      }
+      else{
       this.save_func();
     }
 
   }
   save_func(){
-alert('Room = '+ this.views.roomNumberSelect + '/' + 'Queue = '+this.views.queueNumberSelect);
-    this.httpClient.post('http://localhost:8080/reserve/'+ this.views.customerNameSelect + '/' + this.views.roomNumberSelect + '/' + this.views.queueNumberSelect ,this.views)
+    this.httpClient.post('http://localhost:8080/reserve/'+ this.views.customerNameSelect + '/' + this.views.roomNumberSelect + '/' + this.views.queueNumberSelect + '/' +  this.views.phonecusInput + '/' +  this.views.idReserveInput,this.views)
         .subscribe(
              data => {
                  console.log('PUT Request is successful', data);
+                 alert('SUCCESS');
+
              },
              error => {
                   console.log('Error', error);
-
+                  alert('ERROR');
             }
     );
     }
