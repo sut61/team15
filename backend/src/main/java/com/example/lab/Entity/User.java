@@ -3,12 +3,15 @@ package com.example.lab.Entity;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @Data
 @Getter
 @Setter
-
 @ToString
 @EqualsAndHashCode
 @Table(name = "User")
@@ -18,12 +21,24 @@ public class User {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_seq")
     @Column(name = "userId" , unique = true, nullable = true)
     private @NonNull Long userId;
+    @NotNull
     private  String firstname;
+    @NotNull
     private  String lastname;
+    @NotNull
+    @Max(value = 100)
+    @Min(value = 5)
     private  Integer age;
+    @NotNull
+    @Pattern(regexp = "^[0]{1}[689]{1}[0-9]{8}$")
     private  String phone;
+    @NotNull
+    @Pattern(regexp = "^[1-9]{2}[0-9]{11}$")
     private  String idcard;
+    @NotNull
+    @Pattern(regexp = "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")
     private  String email;
+    @NotNull
     private  String password;
 
     @ManyToOne
