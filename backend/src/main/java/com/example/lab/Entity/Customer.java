@@ -28,7 +28,6 @@ public class Customer {
     @NotNull
     private  String lastname;
     @NotNull
-    @Size(max = 13,min = 13)
     @Pattern(regexp = "^[1-9]{2}[0-9]{11}$")
     private  String idcard;
 
