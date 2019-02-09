@@ -3,7 +3,7 @@
 <div class="container">
   <div style="text-align:center;" class="card card-container">
   <h1>
-    <a style="color:white;">จองคิวทำฟัน</a>
+    <a style="color:black;">จองคิวทำฟัน</a>
   </h1>
 
 <form class="form">
@@ -37,6 +37,18 @@
   </mat-form-field>
 
   <br>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Phone</mat-label>
+    <input matInput placeholder="Phone" [(ngModel)]="views.phonecusInput" name="phonecus" >
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field appearance="outline">
+    <mat-label>ID Reserve</mat-label>
+    <input matInput placeholder="IDReserve" [(ngModel)]="views.idReserveInput" name="idreserve" >
+  </mat-form-field>
 
   <div class="button-1" style="text-align:center;">
     <button mat-raised-button ="green" (click)="save_func()" >จอง</button>

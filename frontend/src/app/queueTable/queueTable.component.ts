@@ -15,7 +15,7 @@ export interface History {
 export class QueueTableComponent implements OnInit{
 
 AllReserve: Array<any>;
-  displayedColumns: string[] = ['No','Customer','Room','Queue'];
+  displayedColumns: string[] = ['No','Customer','Room','Queue','Phone','ID Reserve'];
   dataSource = new HistoryDataSource(this.controller);
 
 constructor(private controller:Controller) { }
