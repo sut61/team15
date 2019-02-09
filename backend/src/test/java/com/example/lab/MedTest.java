@@ -62,7 +62,7 @@ public class MedTest {
     public void testSuccess() {
         Medicaltificate me = new Medicaltificate();
         me.setDendate(new Date());
-        me.setListorder("กก");
+        me.setListorder("1112345678");
         me.setComment("บริการดี");
         me.setTreatmentrights(treatmentrights);
         me.setType(type);
@@ -106,7 +106,7 @@ public class MedTest {
     public void denDateNotnull() {
         Medicaltificate me = new Medicaltificate();
         me.setDendate(null);
-        me.setListorder("กก");
+        me.setListorder("1112345678");
         me.setComment("บริการดี");
         me.setTreatmentrights(treatmentrights);
         me.setType(type);
@@ -128,7 +128,7 @@ public class MedTest {
     public void treatmentrightsNotnull() {
         Medicaltificate me = new Medicaltificate();
         me.setDendate(new Date());
-        me.setListorder("กก");
+        me.setListorder("1112345678");
         me.setComment("บริการดี");
         me.setTreatmentrights(null);
         me.setType(type);
@@ -150,7 +150,7 @@ public class MedTest {
     public void TypeNotnull() {
         Medicaltificate me = new Medicaltificate();
         me.setDendate(new Date());
-        me.setListorder("กก");
+        me.setListorder("1112345678");
         me.setComment("บริการดี");
         me.setTreatmentrights(treatmentrights);
         me.setType(null);
@@ -172,7 +172,7 @@ public class MedTest {
     public void CustomerNotnull() {
         Medicaltificate me = new Medicaltificate();
         me.setDendate(new Date());
-        me.setListorder("กก");
+        me.setListorder("1112345678");
         me.setComment("บริการดี");
         me.setTreatmentrights(treatmentrights);
         me.setType(type);
@@ -194,7 +194,7 @@ public class MedTest {
     public void DentistDataNotnull() {
         Medicaltificate me = new Medicaltificate();
         me.setDendate(new Date());
-        me.setListorder("กก");
+        me.setListorder("1112345678");
         me.setComment("บริการดี");
         me.setTreatmentrights(treatmentrights);
         me.setType(type);
@@ -220,7 +220,7 @@ public class MedTest {
         Medicaltificate me = new Medicaltificate();
         me.setDendate(new Date());
         me.setComment("กก");
-        me.setListorder("ห");
+        me.setListorder("1234567890");
 
         try {
 
@@ -240,8 +240,8 @@ public class MedTest {
         public void testLengthMax () {
             Medicaltificate me = new Medicaltificate();
             me.setDendate(new Date());
-            me.setListorder("กก");
-            me.setComment("กกกกกกกกกกกกกก");
+            me.setListorder("1112345678");
+            me.setComment("ฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟ");
             try {
 
                 entityManager.persist(me);
@@ -250,7 +250,7 @@ public class MedTest {
             } catch (javax.validation.ConstraintViolationException e) {
                 Set<ConstraintViolation<?>> violations = e.getConstraintViolations();
                 assertEquals(violations.isEmpty(), false);
-                assertEquals(violations.size(), 2);
+                assertEquals(violations.size(), 1);
                 System.out.print("2.2  Test testTestLengthMax >> ");
                 System.out.println(e.getMessage()
                         + "2.2------------------------------------------------------------------------------------------------------------------------------------------------Test Case 2.1 Succuess------------------------------------------------------------------------------------------------------------------------------------------------");
@@ -261,7 +261,7 @@ public class MedTest {
     public void testPattern() {
         Medicaltificate me = new Medicaltificate();
         me.setDendate(new Date());
-        me.setListorder("กก");
+        me.setListorder("1112345678");
         me.setComment("บริการดีมาก");
         try {
 
@@ -271,7 +271,7 @@ public class MedTest {
         } catch (javax.validation.ConstraintViolationException e) {
             Set<ConstraintViolation<?>> violations = e.getConstraintViolations();
             assertEquals(violations.isEmpty(), false);
-            assertEquals(violations.size(), 2);
+            assertEquals(violations.size(), 0);
         }
     }
 
