@@ -121,23 +121,21 @@ export class ReferringComponent implements OnInit {
 
   }
   save_func(){
-    if (this.namecus != "" || this.namecus != undefined) {
-
+    if (this.namecus != "" || this.namecus != undefined)
+    {
       this.controller.ReferringForm(this.namecus, this.namedent, this.typename, this.group, this.date, this.tel).subscribe(data => {
         console.log(data);
         this.refe.namecus = data.customer.firstname + " " + data.customer.lastname;
-
         this.refe.namedent = data.dentistData.firstname + " " + data.dentistData.lastname;
         this.refe.typename = data.type.nameType;
         this.refe.date = data.date;
         this.refe.tel = data.tel;
         this.refe.group = data.bloodGroup.nameGroup;
-        alert('Seccess!!!')
-
+        alert('Seccess!!!');
       },error => {
                   console.log('Error', error);
                   alert('Input Error');
-            });
+        });
     }
   }
 

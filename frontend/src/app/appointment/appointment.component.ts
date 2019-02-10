@@ -110,7 +110,7 @@ export class AppointmentComponent implements OnInit {
   }
   save_func(){
     if(this.namecus!=""||this.namecus!=undefined)
-    alert('Success!!');
+
     {
       this.controller.Appointment(this.namecus,this.namedent,this.typename,this.date,this.tel).subscribe(data =>{
         this.App.namecus = data.customer.firstname+" "+data.customer.lastname;
@@ -119,10 +119,13 @@ export class AppointmentComponent implements OnInit {
         this.App.typename = data.type.nameType;
         this.App.date = data.date;
         this.App.tel = data.tel;
+        alert('Success!!');
 
-      });
-    }
-
+    },error => {
+                  console.log('Error', error);
+                  alert('Input Error');
+            });
+}
   }
 
 
