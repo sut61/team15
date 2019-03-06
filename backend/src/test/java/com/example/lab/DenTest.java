@@ -104,7 +104,7 @@ public class DenTest {
         DentistData de = new DentistData();
         de.setFirstname("ธวรรณพร");
         de.setLastname("สามารถ");
-        de.setNumber("1309901371151");
+        de.setNumber("1234567890");
         de.setHospital(null);
         de.setGender(gender);
         de.setType(type);
@@ -125,7 +125,7 @@ public class DenTest {
         DentistData de = new DentistData();
         de.setFirstname("ธวรรณพร");
         de.setLastname("สามารถ");
-        de.setNumber("1309901371151");
+        de.setNumber("1234567890");
         de.setHospital(hospital);
         de.setGender(null);
         de.setType(type);
@@ -146,7 +146,7 @@ public class DenTest {
         DentistData de = new DentistData();
         de.setFirstname("ธวรรณพร");
         de.setLastname("สามารถ");
-        de.setNumber("1309901371151");
+        de.setNumber("1234567890");
         de.setHospital(hospital);
         de.setGender(gender);
         de.setType(null);
@@ -169,7 +169,7 @@ public class DenTest {
         DentistData de = new DentistData();
         de.setFirstname("ธวรรณพร");
         de.setLastname("สามารถ");
-        de.setNumber("1309");
+        de.setNumber("1234567890");
         de.setHospital(hospital);
         de.setGender(gender);
         de.setType(type);
@@ -194,7 +194,7 @@ public class DenTest {
         DentistData de = new DentistData();
         de.setFirstname("ธวรรณพร");
         de.setLastname("สามารถ");
-        de.setNumber("1309901371151");
+        de.setNumber("1234567890");
         de.setHospital(hospital);
         de.setGender(gender);
         de.setType(type);
@@ -240,7 +240,7 @@ public class DenTest {
         DentistData de = new DentistData();
         de.setFirstname("ธวรรณพร");
         de.setLastname("สามารถ");
-        de.setNumber("asdasdasdasdasd");
+        de.setNumber("1234567890");
         de.setHospital(hospital);
         de.setGender(gender);
         de.setType(type);

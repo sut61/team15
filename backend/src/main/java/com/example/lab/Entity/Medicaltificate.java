@@ -24,6 +24,7 @@ public class Medicaltificate {
     @Column(name = "medicaltificateId" , unique = true, nullable = true)
     private @NonNull Long medicaltificateId;
     @NotNull
+    @Size(max=10,min=10)
     @Pattern(regexp = "[1-9]{2}[0-9]{8}$")
     private String listorder;
     @NotNull

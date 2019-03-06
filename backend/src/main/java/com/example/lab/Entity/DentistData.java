@@ -5,6 +5,7 @@ import lombok.*;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Entity
 @Data
@@ -27,6 +28,7 @@ public class DentistData {
     @NotNull
     private  String lastname;
     @NotNull
+    @Size(max=10,min=10)
     @Pattern(regexp = "^[1-9]{2}[0-9]{8}$")
     private  String number;
 
