@@ -72,12 +72,84 @@ public class ReserveTest {
     }
 
     @Test
-    public void testReserveNotNull() {
+    public void testPhonecusReserveNotNull() {
         Reserve c = new Reserve();
         c.setPhonecus(null);
+        c.setIdreserve("R5814909");
+        c.setCustomer(customer);
+        c.setQueue(queue);
+        c.setRoom(room);
+        try {
+            entityManager.persist(c);
+            entityManager.flush();
+        } catch (javax.validation.ConstraintViolationException e) {
+            Set<ConstraintViolation<?>> violations = e.getConstraintViolations();
+            assertEquals(violations.isEmpty(), false);
+            assertEquals(violations.size(), 1);
+        }
+    }
+
+    @Test
+    public void testIdReserveNotNull() {
+        Reserve c = new Reserve();
+        c.setPhonecus("0872545770");
         c.setIdreserve(null);
+        c.setCustomer(customer);
+        c.setQueue(queue);
+        c.setRoom(room);
+        try {
+            entityManager.persist(c);
+            entityManager.flush();
+        } catch (javax.validation.ConstraintViolationException e) {
+            Set<ConstraintViolation<?>> violations = e.getConstraintViolations();
+            assertEquals(violations.isEmpty(), false);
+            assertEquals(violations.size(), 1);
+        }
+    }
+
+    @Test
+    public void testCustomerReserveNotNull() {
+        Reserve c = new Reserve();
+        c.setPhonecus("0872545770");
+        c.setIdreserve("R5814909");
         c.setCustomer(null);
+        c.setQueue(queue);
+        c.setRoom(room);
+        try {
+            entityManager.persist(c);
+            entityManager.flush();
+        } catch (javax.validation.ConstraintViolationException e) {
+            Set<ConstraintViolation<?>> violations = e.getConstraintViolations();
+            assertEquals(violations.isEmpty(), false);
+            assertEquals(violations.size(), 1);
+        }
+    }
+
+    @Test
+    public void testQueueReserveNotNull() {
+        Reserve c = new Reserve();
+        c.setPhonecus("0872545770");
+        c.setIdreserve("R5814909");
+        c.setCustomer(customer);
         c.setQueue(null);
+        c.setRoom(room);
+        try {
+            entityManager.persist(c);
+            entityManager.flush();
+        } catch (javax.validation.ConstraintViolationException e) {
+            Set<ConstraintViolation<?>> violations = e.getConstraintViolations();
+            assertEquals(violations.isEmpty(), false);
+            assertEquals(violations.size(), 1);
+        }
+    }
+
+    @Test
+    public void testRoomReserveNotNull() {
+        Reserve c = new Reserve();
+        c.setPhonecus("0872545770");
+        c.setIdreserve("R5814909");
+        c.setCustomer(customer);
+        c.setQueue(queue);
         c.setRoom(null);
         try {
             entityManager.persist(c);
@@ -85,12 +157,12 @@ public class ReserveTest {
         } catch (javax.validation.ConstraintViolationException e) {
             Set<ConstraintViolation<?>> violations = e.getConstraintViolations();
             assertEquals(violations.isEmpty(), false);
-            assertEquals(violations.size(), 5);
+            assertEquals(violations.size(), 1);
         }
     }
 
     @Test
-    public void testReservePatternDetail() {
+    public void testPhonecusReservePattern() {
         Reserve c = new Reserve();
         c.setPhonecus("0872545770");
         c.setIdreserve("R5814909");
@@ -103,7 +175,97 @@ public class ReserveTest {
         } catch (javax.validation.ConstraintViolationException e) {
             Set<ConstraintViolation<?>> violations = e.getConstraintViolations();
             assertEquals(violations.isEmpty(), false);
-            assertEquals(violations.size(), 2); //Size เท่ากับ 2 เพราะผิด Pattern ด้วย
+            assertEquals(violations.size(), 1);
+        }
+    }
+
+    @Test
+    public void testIdReservePattern() {
+        Reserve c = new Reserve();
+        c.setPhonecus("0872545770");
+        c.setIdreserve("R5814909");
+        c.setCustomer(customer);
+        c.setQueue(queue);
+        c.setRoom(room);
+        try {
+            entityManager.persist(c);
+            entityManager.flush();
+        } catch (javax.validation.ConstraintViolationException e) {
+            Set<ConstraintViolation<?>> violations = e.getConstraintViolations();
+            assertEquals(violations.isEmpty(), false);
+            assertEquals(violations.size(), 1);
+        }
+    }
+
+    @Test
+    public void testReserveMin1() {
+        Reserve c = new Reserve();
+        c.setPhonecus("087");
+        c.setIdreserve("R5814909");
+        c.setCustomer(customer);
+        c.setQueue(queue);
+        c.setRoom(room);
+        try {
+            entityManager.persist(c);
+            entityManager.flush();
+        } catch (javax.validation.ConstraintViolationException e) {
+            Set<ConstraintViolation<?>> violations = e.getConstraintViolations();
+            assertEquals(violations.isEmpty(), false);
+            assertEquals(violations.size(), 2);//ติด pattern
+        }
+    }
+
+    @Test
+    public void testReserveMax1() {
+        Reserve c = new Reserve();
+        c.setPhonecus("08725000000000000");
+        c.setIdreserve("R5814909");
+        c.setCustomer(customer);
+        c.setQueue(queue);
+        c.setRoom(room);
+        try {
+            entityManager.persist(c);
+            entityManager.flush();
+        } catch (javax.validation.ConstraintViolationException e) {
+            Set<ConstraintViolation<?>> violations = e.getConstraintViolations();
+            assertEquals(violations.isEmpty(), false);
+            assertEquals(violations.size(), 2);
+        }
+    }
+
+    @Test
+    public void testReserveMin2() {
+        Reserve c = new Reserve();
+        c.setPhonecus("0871234567");
+        c.setIdreserve("R581");
+        c.setCustomer(customer);
+        c.setQueue(queue);
+        c.setRoom(room);
+        try {
+            entityManager.persist(c);
+            entityManager.flush();
+        } catch (javax.validation.ConstraintViolationException e) {
+            Set<ConstraintViolation<?>> violations = e.getConstraintViolations();
+            assertEquals(violations.isEmpty(), false);
+            assertEquals(violations.size(), 2);
+        }
+    }
+
+    @Test
+    public void testReserveMax2() {
+        Reserve c = new Reserve();
+        c.setPhonecus("0871234567");
+        c.setIdreserve("R58149099");
+        c.setCustomer(customer);
+        c.setQueue(queue);
+        c.setRoom(room);
+        try {
+            entityManager.persist(c);
+            entityManager.flush();
+        } catch (javax.validation.ConstraintViolationException e) {
+            Set<ConstraintViolation<?>> violations = e.getConstraintViolations();
+            assertEquals(violations.isEmpty(), false);
+            assertEquals(violations.size(), 2);
         }
     }
 
