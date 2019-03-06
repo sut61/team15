@@ -62,7 +62,7 @@ public class MedTest {
     public void testSuccess() {
         Medicaltificate me = new Medicaltificate();
         me.setDendate(new Date());
-        me.setListorder("1112345678");
+        me.setListorder("1111111111");
         me.setComment("บริการดี");
         me.setTreatmentrights(treatmentrights);
         me.setType(type);
@@ -106,7 +106,7 @@ public class MedTest {
     public void denDateNotnull() {
         Medicaltificate me = new Medicaltificate();
         me.setDendate(null);
-        me.setListorder("1112345678");
+        me.setListorder("1111111111");
         me.setComment("บริการดี");
         me.setTreatmentrights(treatmentrights);
         me.setType(type);
@@ -128,7 +128,7 @@ public class MedTest {
     public void treatmentrightsNotnull() {
         Medicaltificate me = new Medicaltificate();
         me.setDendate(new Date());
-        me.setListorder("1112345678");
+        me.setListorder("1111111111");
         me.setComment("บริการดี");
         me.setTreatmentrights(null);
         me.setType(type);
@@ -150,7 +150,7 @@ public class MedTest {
     public void TypeNotnull() {
         Medicaltificate me = new Medicaltificate();
         me.setDendate(new Date());
-        me.setListorder("1112345678");
+        me.setListorder("1111111111");
         me.setComment("บริการดี");
         me.setTreatmentrights(treatmentrights);
         me.setType(null);
@@ -172,7 +172,7 @@ public class MedTest {
     public void CustomerNotnull() {
         Medicaltificate me = new Medicaltificate();
         me.setDendate(new Date());
-        me.setListorder("1112345678");
+        me.setListorder("1111111111");
         me.setComment("บริการดี");
         me.setTreatmentrights(treatmentrights);
         me.setType(type);
@@ -194,7 +194,7 @@ public class MedTest {
     public void DentistDataNotnull() {
         Medicaltificate me = new Medicaltificate();
         me.setDendate(new Date());
-        me.setListorder("1112345678");
+        me.setListorder("1111111111");
         me.setComment("บริการดี");
         me.setTreatmentrights(treatmentrights);
         me.setType(type);
@@ -220,7 +220,7 @@ public class MedTest {
         Medicaltificate me = new Medicaltificate();
         me.setDendate(new Date());
         me.setComment("กก");
-        me.setListorder("1234567890");
+        me.setListorder("1111111111");
 
         try {
 
@@ -240,7 +240,7 @@ public class MedTest {
         public void testLengthMax () {
             Medicaltificate me = new Medicaltificate();
             me.setDendate(new Date());
-            me.setListorder("1112345678");
+            me.setListorder("1111111111");
             me.setComment("ฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟ");
             try {
 
@@ -261,7 +261,7 @@ public class MedTest {
     public void testPattern() {
         Medicaltificate me = new Medicaltificate();
         me.setDendate(new Date());
-        me.setListorder("1112345678");
+        me.setListorder("1111111111");
         me.setComment("บริการดีมาก");
         try {
 
