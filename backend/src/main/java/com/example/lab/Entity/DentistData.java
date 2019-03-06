@@ -31,8 +31,7 @@ public class DentistData {
     @Size(max=10,min=10)
     @Pattern(regexp = "^[1-9]{2}[0-9]{8}$")
     private  String number;
-
-
+    
     @ManyToOne
     @JoinColumn(name = "genderId")
     private Gender gender;
