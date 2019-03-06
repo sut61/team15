@@ -35,11 +35,15 @@ public class Reserve {
     @Column(name="Reserve_ID",unique = true, nullable = true)
     private @NonNull long reserveId;
 
+
     @NotNull
+    @Size(min = 10,max = 10)
     @Pattern(regexp = "^[0]{1}[689]{1}[0-9]{8}$")
     private  String phonecus;
 
+
     @NotNull
+    @Size(min = 8,max = 8)
     @Pattern(regexp = "^[R]{1}[0-9]{7}$")
     private  String idreserve;
 

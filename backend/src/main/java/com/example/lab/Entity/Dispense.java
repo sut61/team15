@@ -3,9 +3,7 @@ package com.example.lab.Entity;
 import lombok.*;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 
 @Entity
 @Data
@@ -29,8 +27,12 @@ public class Dispense {
     private String idlabel;
 
     @NotNull
+    @Max(value = 30)
+    @Min(value = 3)
     private Integer numberpill;
+
     @NotNull
+    @Pattern(regexp = "^([ก-ู]|[เ-์])+")
     private String benefit;
 
     @NotNull
