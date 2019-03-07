@@ -32,6 +32,7 @@ public class Dispense {
     private Integer numberpill;
 
     @NotNull
+    @Size(min = 3,max = 15)
     @Pattern(regexp = "^([ก-ู]|[เ-์])+")
     private String benefit;
 

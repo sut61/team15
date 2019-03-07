@@ -309,6 +309,50 @@ public class DispenseTest {
     }
 
     @Test
+    public void testBenefitDispenseMin() {
+        Dispense c = new Dispense();
+        c.setIdlabel("D5814909");
+        c.setNumberpill(10);
+        c.setBenefit("ลด");
+        c.setCustomer(customer);
+        c.setDentistData(dentistData);
+        c.setInstruction(instruction);
+        c.setStockmed(stockmed);
+        try {
+            entityManager.persist(c);
+            entityManager.flush();
+
+            //fail("Should not pass to this line");
+        } catch (javax.validation.ConstraintViolationException e) {
+            Set<ConstraintViolation<?>> violations = e.getConstraintViolations();
+            assertEquals(violations.isEmpty(), false);
+            assertEquals(violations.size(), 1); //Size เท่ากับ 2 เพราะผิด Pattern ด้วย
+        }
+    }
+
+    @Test
+    public void testBenefitDispenseMax() {
+        Dispense c = new Dispense();
+        c.setIdlabel("D5814909");
+        c.setNumberpill(10);
+        c.setBenefit("ลดไข้ยาววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววววว");
+        c.setCustomer(customer);
+        c.setDentistData(dentistData);
+        c.setInstruction(instruction);
+        c.setStockmed(stockmed);
+        try {
+            entityManager.persist(c);
+            entityManager.flush();
+
+            //fail("Should not pass to this line");
+        } catch (javax.validation.ConstraintViolationException e) {
+            Set<ConstraintViolation<?>> violations = e.getConstraintViolations();
+            assertEquals(violations.isEmpty(), false);
+            assertEquals(violations.size(), 1);
+        }
+    }
+
+    @Test
     public void testIdDispensePattern() {
         Dispense c = new Dispense();
         c.setIdlabel("D5814909");
