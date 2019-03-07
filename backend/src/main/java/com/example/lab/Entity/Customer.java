@@ -40,7 +40,7 @@ public class Customer {
     private Province province;
 
     @ManyToOne
-    @JoinColumn(name = "titleId")
+    @JoinColumn(name = "typeId")
     private Type type;
 
     public String getFirstname() {
